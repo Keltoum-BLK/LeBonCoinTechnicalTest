@@ -29,7 +29,6 @@ struct ClassifiedAd: Codable {
         case siret
     }
 }
-
 // MARK: - ImagesURL
 struct ImagesURL: Codable {
     let small, thumb: String?

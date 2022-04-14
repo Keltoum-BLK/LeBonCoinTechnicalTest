@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class ImageView: UIImageView {
 
     override init(frame: CGRect) {
@@ -26,3 +27,4 @@ class ImageView: UIImageView {
         self.image = defaultImage
     }
 }
+
