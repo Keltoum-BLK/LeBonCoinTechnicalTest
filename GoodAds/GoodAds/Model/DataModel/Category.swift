@@ -7,12 +7,9 @@
 
 import Foundation
 
-struct Categories: Decodable {
-    let categories: [Category]
-    
-    struct Category: Decodable {
+struct Category: Codable {
         let id: Int
         let name: String
     }
-}
+
 

@@ -9,12 +9,18 @@ import Foundation
 
 class ListingService {
     
-    private let session: URLSession
-
+    //MARK: Singleton
+    static let shared = ListingService()
+    private init() {}
+    
+    //MARK: Properties
+    private var dataTask: URLSessionDataTask?
+    var session = URLSession(configuration: .default)
+   
     init(session: URLSession) {
         self.session = session
     }
-
+    
     private func createRequest() -> URLRequest {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -24,15 +30,31 @@ class ListingService {
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "GET"
         request.allowsExpensiveNetworkAccess = true
-        request.timeoutInterval = TimeInterval(30)
         return request
     }
 }
 
 extension ListingService: ApiListingService {
     
-    func getListingData(completion: @escaping (Result<[Listing], NetworkError>) -> Void) {
-        <#code#>
+    func getListingData(completion: @escaping (Result<[ClassifiedAd], NetworkError>) -> Void) {
+        let request = createRequest()
+        session.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(.failure(.dataError))
+                return
+            }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+               
+                completion(.failure(.responseError))
+                return
+            }
+            do {
+                let adList = try JSONDecoder().decode([ClassifiedAd].self, from: data)
+                completion(.success(adList))
+            } catch {
+                completion(.failure(.decodingData))
+            }
+        }
+        .resume()
     }
-    
 }

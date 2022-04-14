@@ -7,33 +7,45 @@
 
 import Foundation
 
-class CategoriesService {
+class CategoriesService: ApiCategoriesService {
     
-    private let session: URLSession
-
+    //MARK: Singleton
+    static let shared = CategoriesService()
+    private init() {}
+    
+    //MARK: Properties
+    private var dataTask: URLSessionDataTask?
+    var session = URLSession(configuration: .default)
+   
     init(session: URLSession) {
         self.session = session
     }
 
-    private func createRequest() -> URLRequest {
+   func getCategoriesData(completion: @escaping (Result<[Category], NetworkError>) -> Void) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "raw.githubusercontent.com"
         urlComponents.path = "/leboncoin/paperclip/master/categories.json"
 
-        var request = URLRequest(url: urlComponents.url!)
-        request.httpMethod = "GET"
-        request.allowsExpensiveNetworkAccess = true
-        request.timeoutInterval = TimeInterval(30)
-        return request
+        guard let urlListing = urlComponents.url?.absoluteString else { return }
+        guard let url = URL(string: urlListing) else { return }
+        
+        session.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(.failure(.dataError))
+                return
+            }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(.responseError))
+                return
+            }
+            do {
+                let adList = try JSONDecoder().decode([Category].self, from: data)
+                completion(.success(adList))
+            } catch {
+                completion(.failure(.decodingData))
+            }
+        }
+        .resume()
     }
-}
-
-extension CategoriesService: ApiCategoriesService {
-    
-    func getCategoriesData(completion: @escaping (Result<[Categories], NetworkError>) -> Void) {
-        <#code#>
-    }
-    
-    
 }

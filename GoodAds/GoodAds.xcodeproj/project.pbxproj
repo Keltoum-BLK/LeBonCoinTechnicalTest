@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC392806D1BD0004EC6E /* AppDelegate.swift */; };
 		B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3B2806D1BD0004EC6E /* SceneDelegate.swift */; };
-		B948BC3E2806D1BD0004EC6E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3D2806D1BD0004EC6E /* MainViewController.swift */; };
+		B948BC3E2806D1BD0004EC6E /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */; };
 		B948BC432806D1BD0004EC6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B948BC422806D1BD0004EC6E /* Assets.xcassets */; };
 		B948BC462806D1BD0004EC6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B948BC442806D1BD0004EC6E /* LaunchScreen.storyboard */; };
 		B948BC512806D1BD0004EC6E /* GoodAdsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC502806D1BD0004EC6E /* GoodAdsTests.swift */; };
@@ -18,13 +18,16 @@
 		B948BC6A2806D1DD0004EC6E /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC692806D1DD0004EC6E /* Categories.json */; };
 		B948BC6C2806D2090004EC6E /* Listing.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6B2806D2090004EC6E /* Listing.json */; };
 		B948BC6E2806D2330004EC6E /* Swagger.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6D2806D2330004EC6E /* Swagger.json */; };
-		B948BC79280717950004EC6E /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC78280717950004EC6E /* Listing.swift */; };
-		B948BC7C280717C80004EC6E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7B280717C80004EC6E /* Categories.swift */; };
+		B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC78280717950004EC6E /* ClassifiedAd.swift */; };
+		B948BC7C280717C80004EC6E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7B280717C80004EC6E /* Category.swift */; };
 		B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7E2807230D0004EC6E /* ApiService.swift */; };
 		B948BC812807241C0004EC6E /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC802807241C0004EC6E /* ListingService.swift */; };
 		B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC822807245E0004EC6E /* CategoriesService.swift */; };
 		B948BC86280726C60004EC6E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC85280726C60004EC6E /* NetworkError.swift */; };
 		B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */; };
+		B97247392808425A001FEEA6 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97247382808425A001FEEA6 /* ListingViewModel.swift */; };
+		B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473A280842A8001FEEA6 /* ListingActionsView.swift */; };
+		B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473C280842BC001FEEA6 /* AdActionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,7 @@
 		B948BC362806D1BD0004EC6E /* GoodAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948BC392806D1BD0004EC6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B948BC3B2806D1BD0004EC6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B948BC3D2806D1BD0004EC6E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 		B948BC422806D1BD0004EC6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B948BC452806D1BD0004EC6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B948BC472806D1BD0004EC6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,13 +63,16 @@
 		B948BC692806D1DD0004EC6E /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		B948BC6B2806D2090004EC6E /* Listing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Listing.json; sourceTree = "<group>"; };
 		B948BC6D2806D2330004EC6E /* Swagger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Swagger.json; sourceTree = "<group>"; };
-		B948BC78280717950004EC6E /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
-		B948BC7B280717C80004EC6E /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		B948BC78280717950004EC6E /* ClassifiedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAd.swift; sourceTree = "<group>"; };
+		B948BC7B280717C80004EC6E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B948BC7E2807230D0004EC6E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		B948BC802807241C0004EC6E /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
 		B948BC822807245E0004EC6E /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		B948BC85280726C60004EC6E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
+		B97247382808425A001FEEA6 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
+		B972473A280842A8001FEEA6 /* ListingActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingActionsView.swift; sourceTree = "<group>"; };
+		B972473C280842BC001FEEA6 /* AdActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdActionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +168,8 @@
 		B948BC702806D6780004EC6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B948BC7D280722D10004EC6E /* NetworkService */,
 				B948BC772807177A0004EC6E /* DataModel */,
+				B948BC7D280722D10004EC6E /* NetworkService */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,7 +185,7 @@
 		B948BC722806D6840004EC6E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B948BC3D2806D1BD0004EC6E /* MainViewController.swift */,
+				B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */,
 				B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */,
 			);
 			path = Controller;
@@ -210,8 +216,8 @@
 		B948BC772807177A0004EC6E /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				B948BC78280717950004EC6E /* Listing.swift */,
-				B948BC7B280717C80004EC6E /* Categories.swift */,
+				B948BC78280717950004EC6E /* ClassifiedAd.swift */,
+				B948BC7B280717C80004EC6E /* Category.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -230,6 +236,9 @@
 		B948BC84280724700004EC6E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B97247382808425A001FEEA6 /* ListingViewModel.swift */,
+				B972473A280842A8001FEEA6 /* ListingActionsView.swift */,
+				B972473C280842BC001FEEA6 /* AdActionsView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -367,15 +376,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B948BC3E2806D1BD0004EC6E /* MainViewController.swift in Sources */,
+				B948BC3E2806D1BD0004EC6E /* ListingViewController.swift in Sources */,
 				B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */,
 				B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */,
+				B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */,
 				B948BC812807241C0004EC6E /* ListingService.swift in Sources */,
 				B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */,
+				B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */,
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
-				B948BC7C280717C80004EC6E /* Categories.swift in Sources */,
+				B948BC7C280717C80004EC6E /* Category.swift in Sources */,
 				B948BC86280726C60004EC6E /* NetworkError.swift in Sources */,
-				B948BC79280717950004EC6E /* Listing.swift in Sources */,
+				B97247392808425A001FEEA6 /* ListingViewModel.swift in Sources */,
+				B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */,
 				B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
