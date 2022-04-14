@@ -18,7 +18,7 @@ class ListViewModel: NSObject {
                 switch result {
                 case .success(let categories):
                     DispatchQueue.main.async {
-                        self.updateListOfCategories?(categories)
+                       self.updateListOfCategories?(categories)
                     }
                 case .failure(let error):
                     print(error.description)

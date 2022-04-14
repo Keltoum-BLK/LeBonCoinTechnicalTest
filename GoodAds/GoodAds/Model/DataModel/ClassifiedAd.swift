@@ -6,39 +6,6 @@
 //
 
 import Foundation
-//
-//struct ClassifiedAd: Decodable{
-//
-//    let id: Int
-//    let categoryId: Int
-//    let title: String
-//    let description: String
-//    let price: Float
-//    let imagesUrl: ImagesURL
-//    let creationDate: String
-//    let isUrgent: Bool
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id = "id"
-//        case categoryId = "category_id"
-//        case title = "title"
-//        case description = "description"
-//        case price = "price"
-//        case imagesUrl = "images_url"
-//        case creationDate = "creation_date"
-//        case isUrgent = "is_urgent"
-//    }
-//
-//    struct ImagesURL: Decodable{
-//        let small: String
-//        let thumb: Bool
-//
-//        enum CodingKeys: String, CodingKey {
-//            case small = "small"
-//            case thumb = "thumb"
-//        }
-//    }
-//}
 
 // MARK: - ClassifiedAd
 struct ClassifiedAd: Codable {
