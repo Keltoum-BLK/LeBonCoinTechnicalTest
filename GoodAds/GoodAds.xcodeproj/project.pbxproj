@@ -25,9 +25,11 @@
 		B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC822807245E0004EC6E /* CategoriesService.swift */; };
 		B948BC86280726C60004EC6E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC85280726C60004EC6E /* NetworkError.swift */; };
 		B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */; };
-		B97247392808425A001FEEA6 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97247382808425A001FEEA6 /* ListingViewModel.swift */; };
 		B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473A280842A8001FEEA6 /* ListingActionsView.swift */; };
 		B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473C280842BC001FEEA6 /* AdActionsView.swift */; };
+		B972474028085DA5001FEEA6 /* Extension-ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473F28085DA5001FEEA6 /* Extension-ListViewController.swift */; };
+		B972474228085E55001FEEA6 /* Extension-AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */; };
+		B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97247432808675C001FEEA6 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +72,11 @@
 		B948BC822807245E0004EC6E /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		B948BC85280726C60004EC6E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
-		B97247382808425A001FEEA6 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
 		B972473A280842A8001FEEA6 /* ListingActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingActionsView.swift; sourceTree = "<group>"; };
 		B972473C280842BC001FEEA6 /* AdActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdActionsView.swift; sourceTree = "<group>"; };
+		B972473F28085DA5001FEEA6 /* Extension-ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-ListViewController.swift"; sourceTree = "<group>"; };
+		B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-AdDetailsViewController.swift"; sourceTree = "<group>"; };
+		B97247432808675C001FEEA6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 			children = (
 				B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */,
 				B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */,
+				B972473E28085D73001FEEA6 /* Extensions */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,11 +241,20 @@
 		B948BC84280724700004EC6E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B97247382808425A001FEEA6 /* ListingViewModel.swift */,
+				B97247432808675C001FEEA6 /* ListViewModel.swift */,
 				B972473A280842A8001FEEA6 /* ListingActionsView.swift */,
 				B972473C280842BC001FEEA6 /* AdActionsView.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B972473E28085D73001FEEA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B972473F28085DA5001FEEA6 /* Extension-ListViewController.swift */,
+				B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,14 +393,16 @@
 				B948BC3E2806D1BD0004EC6E /* ListingViewController.swift in Sources */,
 				B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */,
 				B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */,
+				B972474028085DA5001FEEA6 /* Extension-ListViewController.swift in Sources */,
 				B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */,
+				B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */,
 				B948BC812807241C0004EC6E /* ListingService.swift in Sources */,
+				B972474228085E55001FEEA6 /* Extension-AdDetailsViewController.swift in Sources */,
 				B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */,
 				B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */,
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
 				B948BC7C280717C80004EC6E /* Category.swift in Sources */,
 				B948BC86280726C60004EC6E /* NetworkError.swift in Sources */,
-				B97247392808425A001FEEA6 /* ListingViewModel.swift in Sources */,
 				B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */,
 				B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */,
 			);

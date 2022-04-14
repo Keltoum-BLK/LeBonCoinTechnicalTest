@@ -8,8 +8,11 @@
 import UIKit
 
 class ListingViewController: UIViewController {
-
-    var adListing: [ClassifiedAd] = []
+    
+    internal var categoriesList: [Category] = []
+    internal var listOfAds: [ClassifiedAd] = [] 
+    
+    let listViewModel = ListViewModel()
     
     init(){
         super.init(nibName: nil, bundle: nil)
@@ -22,15 +25,23 @@ class ListingViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .red
         
-        ListingService.shared.getListingData { [weak self] result in
-            switch result {
-            case .success(let adList):
-                self?.adListing = adList
-                dump(self?.adListing)
-            case .failure(let error):
-                print(error.description)
-            }
+        listViewModel.updateListOfCategories = { [weak self] categories in
+            self?.categoriesList = categories
         }
+        
+        listViewModel.updateListOfAds = { [weak self] ads in
+            self?.listOfAds = ads
+            dump(self?.listOfAds)
+        }
+     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listViewModel.fecthClassifiedAds()
+        listViewModel.fecthCategories()
     }
 }
+
+
 

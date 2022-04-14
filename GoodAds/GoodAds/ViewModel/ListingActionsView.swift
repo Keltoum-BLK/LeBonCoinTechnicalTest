@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol ListingActionsView: AnyObject {
+    func fecthClassifiedAds()
+    func fecthCategories()
+}
