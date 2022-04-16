@@ -8,6 +8,7 @@
 
 import UIKit
 let imageCache = NSCache<AnyObject, AnyObject>()
+
 extension UIImageView {
     //MARK: convert url to imageView and Cache Image
     func cacheImage(urlString: String){

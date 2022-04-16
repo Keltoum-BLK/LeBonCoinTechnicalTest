@@ -10,6 +10,16 @@ import UIKit
 
 class AdDetailScrollView : UIView {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupScrollView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupScrollView()
+    }
+    
     lazy var scrollView = UIScrollView()
     lazy var contentView = UIView()
     

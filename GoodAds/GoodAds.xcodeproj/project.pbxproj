@@ -27,18 +27,13 @@
 		B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */; };
 		B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473A280842A8001FEEA6 /* ListingActionsView.swift */; };
 		B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473C280842BC001FEEA6 /* AdActionsView.swift */; };
-		B972474228085E55001FEEA6 /* Extension-AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */; };
+		B972474228085E55001FEEA6 /* AdDetailsViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */; };
 		B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97247432808675C001FEEA6 /* ListViewModel.swift */; };
 		B972474728087115001FEEA6 /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474628087115001FEEA6 /* AdsView.swift */; };
-		B972474B28088035001FEEA6 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474A28088035001FEEA6 /* ImageView.swift */; };
-		B972474D28088058001FEEA6 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474C28088058001FEEA6 /* TableView.swift */; };
-		B972474F2808807D001FEEA6 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474E2808807D001FEEA6 /* Label.swift */; };
-		B972475128088122001FEEA6 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475028088122001FEEA6 /* StackView.swift */; };
 		B9724753280888C7001FEEA6 /* AdDetailScrollView .swift in Sources */ = {isa = PBXBuildFile; fileRef = B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */; };
-		B972475528088959001FEEA6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475428088959001FEEA6 /* BackButton.swift */; };
 		B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475B28088C92001FEEA6 /* AdsListTableViewCell.swift */; };
 		B972475E28088E43001FEEA6 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475D28088E43001FEEA6 /* Tool.swift */; };
-		B9724762280890B7001FEEA6 /* Extension-UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9724761280890B7001FEEA6 /* Extension-UIImageView.swift */; };
+		B9724762280890B7001FEEA6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,18 +78,13 @@
 		B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
 		B972473A280842A8001FEEA6 /* ListingActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingActionsView.swift; sourceTree = "<group>"; };
 		B972473C280842BC001FEEA6 /* AdActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdActionsView.swift; sourceTree = "<group>"; };
-		B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-AdDetailsViewController.swift"; sourceTree = "<group>"; };
+		B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdDetailsViewController+Extension.swift"; sourceTree = "<group>"; };
 		B97247432808675C001FEEA6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		B972474628087115001FEEA6 /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
-		B972474A28088035001FEEA6 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		B972474C28088058001FEEA6 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		B972474E2808807D001FEEA6 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
-		B972475028088122001FEEA6 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdDetailScrollView .swift"; sourceTree = "<group>"; };
-		B972475428088959001FEEA6 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		B972475B28088C92001FEEA6 /* AdsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListTableViewCell.swift; sourceTree = "<group>"; };
 		B972475D28088E43001FEEA6 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
-		B9724761280890B7001FEEA6 /* Extension-UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIImageView.swift"; sourceTree = "<group>"; };
+		B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				B972475A28088C62001FEEA6 /* Cell */,
-				B9724745280870ED001FEEA6 /* ReusableElements */,
 				B972474628087115001FEEA6 /* AdsView.swift */,
 				B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */,
 				B948BC442806D1BD0004EC6E /* LaunchScreen.storyboard */,
@@ -275,21 +264,9 @@
 		B972473E28085D73001FEEA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */,
+				B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B9724745280870ED001FEEA6 /* ReusableElements */ = {
-			isa = PBXGroup;
-			children = (
-				B972474A28088035001FEEA6 /* ImageView.swift */,
-				B972474E2808807D001FEEA6 /* Label.swift */,
-				B972474C28088058001FEEA6 /* TableView.swift */,
-				B972475028088122001FEEA6 /* StackView.swift */,
-				B972475428088959001FEEA6 /* BackButton.swift */,
-			);
-			path = ReusableElements;
 			sourceTree = "<group>";
 		};
 		B972475A28088C62001FEEA6 /* Cell */ = {
@@ -303,7 +280,7 @@
 		B972476028089089001FEEA6 /* ExtensionsView */ = {
 			isa = PBXGroup;
 			children = (
-				B9724761280890B7001FEEA6 /* Extension-UIImageView.swift */,
+				B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */,
 			);
 			path = ExtensionsView;
 			sourceTree = "<group>";
@@ -445,22 +422,17 @@
 				B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */,
 				B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */,
 				B972475E28088E43001FEEA6 /* Tool.swift in Sources */,
-				B9724762280890B7001FEEA6 /* Extension-UIImageView.swift in Sources */,
-				B972474F2808807D001FEEA6 /* Label.swift in Sources */,
+				B9724762280890B7001FEEA6 /* UIImageView+Extension.swift in Sources */,
 				B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */,
 				B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */,
-				B972475128088122001FEEA6 /* StackView.swift in Sources */,
-				B972474D28088058001FEEA6 /* TableView.swift in Sources */,
 				B948BC812807241C0004EC6E /* ListingService.swift in Sources */,
-				B972474B28088035001FEEA6 /* ImageView.swift in Sources */,
 				B9724753280888C7001FEEA6 /* AdDetailScrollView .swift in Sources */,
-				B972474228085E55001FEEA6 /* Extension-AdDetailsViewController.swift in Sources */,
+				B972474228085E55001FEEA6 /* AdDetailsViewController+Extension.swift in Sources */,
 				B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */,
 				B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */,
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
 				B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */,
 				B972474728087115001FEEA6 /* AdsView.swift in Sources */,
-				B972475528088959001FEEA6 /* BackButton.swift in Sources */,
 				B948BC7C280717C80004EC6E /* Category.swift in Sources */,
 				B948BC86280726C60004EC6E /* NetworkError.swift in Sources */,
 				B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */,
