@@ -26,9 +26,7 @@
 		B948BC86280726C60004EC6E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC85280726C60004EC6E /* NetworkError.swift */; };
 		B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */; };
 		B950DDCE280B11F600CCC21B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */; };
-		B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473A280842A8001FEEA6 /* ListingActionsView.swift */; };
 		B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473C280842BC001FEEA6 /* AdActionsView.swift */; };
-		B972474228085E55001FEEA6 /* AdDetailsViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */; };
 		B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97247432808675C001FEEA6 /* ListViewModel.swift */; };
 		B972474728087115001FEEA6 /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474628087115001FEEA6 /* AdsView.swift */; };
 		B9724753280888C7001FEEA6 /* AdDetailScrollView .swift in Sources */ = {isa = PBXBuildFile; fileRef = B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */; };
@@ -78,9 +76,7 @@
 		B948BC85280726C60004EC6E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
 		B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		B972473A280842A8001FEEA6 /* ListingActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingActionsView.swift; sourceTree = "<group>"; };
 		B972473C280842BC001FEEA6 /* AdActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdActionsView.swift; sourceTree = "<group>"; };
-		B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdDetailsViewController+Extension.swift"; sourceTree = "<group>"; };
 		B97247432808675C001FEEA6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		B972474628087115001FEEA6 /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
 		B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdDetailScrollView .swift"; sourceTree = "<group>"; };
@@ -249,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				B97247432808675C001FEEA6 /* ListViewModel.swift */,
-				B972473A280842A8001FEEA6 /* ListingActionsView.swift */,
 				B972473C280842BC001FEEA6 /* AdActionsView.swift */,
 			);
 			path = ViewModel;
@@ -258,7 +253,6 @@
 		B972473E28085D73001FEEA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -422,9 +416,7 @@
 				B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */,
 				B948BC812807241C0004EC6E /* ListingService.swift in Sources */,
 				B9724753280888C7001FEEA6 /* AdDetailScrollView .swift in Sources */,
-				B972474228085E55001FEEA6 /* AdDetailsViewController+Extension.swift in Sources */,
 				B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */,
-				B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */,
 				B950DDCE280B11F600CCC21B /* UILabel+Extension.swift in Sources */,
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
 				B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */,

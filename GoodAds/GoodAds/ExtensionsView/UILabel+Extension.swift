@@ -8,8 +8,9 @@
 import UIKit
 
 extension UILabel {
+
     //MARK: Method to get margins in an UILabel
-    func setMargins(margin: CGFloat = 20) {
+    func setMargins(margin: CGFloat = 10) {
         if let textString = self.text {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.firstLineHeadIndent = margin

@@ -39,7 +39,6 @@ class ListingViewController: UIViewController {
         view = adsView
         adsView.adsTableView.dataSource = self
         adsView.adsTableView.delegate = self
-        setNavigationBar(for: self)
         
         listViewModel.updateListOfCategories = { [weak self] categories in
             self?.categoriesList = categories
@@ -63,15 +62,6 @@ class ListingViewController: UIViewController {
     }
 }
 extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
- 
-    fileprivate func setNavigationBar(for rootViewController: UIViewController){
-        if #available(iOS 15.0, *) {
-            let navigationBarAppearance = UINavigationBarAppearance()
-            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-        }
-    }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return adsView.sizeWithTheDevice()
@@ -89,6 +79,14 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = adsView.adsTableView.dequeueReusableCell(withIdentifier: AdsListTableViewCell.identifier, for: indexPath) as! AdsListTableViewCell
         cell.configureCell(ad: listOfAds[indexPath.row], categories: categoriesList)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let adDetailsView = AdDetailsViewController(ad: listOfAds[indexPath.row])
+        adDetailsView.modalPresentationStyle = .pageSheet
+        let vc = UINavigationController(rootViewController: adDetailsView)
+        present(vc, animated: true, completion: nil)
+       
     }
 }
 

@@ -81,7 +81,7 @@ class AdsListTableViewCell: UITableViewCell {
     
     lazy var adUrgent: UILabel = {
         let text = UILabel()
-        text.setMargins(margin: 5)
+        text.setMargins()
         text.text = "Urgent"
         text.textColor = .orange
         text.backgroundColor = .white
@@ -101,12 +101,12 @@ class AdsListTableViewCell: UITableViewCell {
 extension AdsListTableViewCell {
     
     func configureCell(ad: ClassifiedAd, categories: [Category]) {
-        adImage.downloaded(from: ad.imagesURL.thumb ?? "no image")
+        adImage.downloaded(from: ad.imagesURL.small ?? "no image")
         adTitle.text = ad.title
         adPrice.text = String(ad.price) + "€"
         isUrgent(ad: ad)
-        adDate.text = Tool.shared.convertToDateFormate(dateString: ad.creationDate)
         adCategory.text = wichCategory(ad: ad, categories: categories)
+        adDate.text = Tool.shared.convertToDateFormat(dateString: ad.creationDate)
     }
     
     private func isUrgent(ad: ClassifiedAd) {
@@ -128,7 +128,6 @@ extension AdsListTableViewCell {
         addSubview(adTitle)
         addSubview(adCategory)
         addSubview(adPrice)
-        addSubview(adDate)
         backgroundColor = .white
         layer.cornerRadius = 20
         NSLayoutConstraint.activate([
@@ -138,7 +137,7 @@ extension AdsListTableViewCell {
             adImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35),
             adUrgent.leadingAnchor.constraint(equalTo: adImage.leadingAnchor, constant: 10),
             adUrgent.bottomAnchor.constraint(equalTo: adImage.bottomAnchor, constant: -10),
-            adUrgent.heightAnchor.constraint(equalTo: adImage.heightAnchor, multiplier: 0.10),
+            adUrgent.heightAnchor.constraint(equalTo: adImage.heightAnchor, multiplier: 0.15),
             adUrgent.widthAnchor.constraint(equalTo: adImage.widthAnchor, multiplier: 0.4),
             adTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             adTitle.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
@@ -148,10 +147,7 @@ extension AdsListTableViewCell {
             adCategory.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
             adPrice.topAnchor.constraint(equalTo: adCategory.bottomAnchor, constant: 10),
             adPrice.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            adPrice.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
-            adDate.topAnchor.constraint(equalTo: adPrice.bottomAnchor, constant: 10),
-            adDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            adDate.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10)
+            adPrice.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10)
         ])
     }
 }
