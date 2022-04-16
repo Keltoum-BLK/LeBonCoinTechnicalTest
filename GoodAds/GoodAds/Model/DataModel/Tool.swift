@@ -8,6 +8,9 @@
 import Foundation
 
 class Tool {
+    
+    //MARK: Singleton
+    static let shared = Tool()
     //MARK: SORTED METHODS
     //Sorted array first with the date and after with is_Urgent Bool
     func sortedAds(listOfAds: [ClassifiedAd]) -> [ClassifiedAd] {

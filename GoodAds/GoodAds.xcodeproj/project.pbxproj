@@ -25,6 +25,8 @@
 		B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC822807245E0004EC6E /* CategoriesService.swift */; };
 		B948BC86280726C60004EC6E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC85280726C60004EC6E /* NetworkError.swift */; };
 		B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */; };
+		B950DDCE280B11F600CCC21B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */; };
+		B950DDD0280B172C00CCC21B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950DDCF280B172C00CCC21B /* PaddingLabel.swift */; };
 		B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473A280842A8001FEEA6 /* ListingActionsView.swift */; };
 		B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473C280842BC001FEEA6 /* AdActionsView.swift */; };
 		B972474228085E55001FEEA6 /* AdDetailsViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */; };
@@ -76,6 +78,8 @@
 		B948BC822807245E0004EC6E /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		B948BC85280726C60004EC6E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
+		B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		B950DDCF280B172C00CCC21B /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		B972473A280842A8001FEEA6 /* ListingActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingActionsView.swift; sourceTree = "<group>"; };
 		B972473C280842BC001FEEA6 /* AdActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdActionsView.swift; sourceTree = "<group>"; };
 		B972474128085E55001FEEA6 /* AdDetailsViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdDetailsViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -190,10 +194,11 @@
 		B948BC712806D6800004EC6E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B972475A28088C62001FEEA6 /* Cell */,
+				B950DDCF280B172C00CCC21B /* PaddingLabel.swift */,
 				B972474628087115001FEEA6 /* AdsView.swift */,
 				B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */,
 				B948BC442806D1BD0004EC6E /* LaunchScreen.storyboard */,
+				B972475A28088C62001FEEA6 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */,
+				B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */,
 			);
 			path = ExtensionsView;
 			sourceTree = "<group>";
@@ -430,8 +436,10 @@
 				B972474228085E55001FEEA6 /* AdDetailsViewController+Extension.swift in Sources */,
 				B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */,
 				B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */,
+				B950DDCE280B11F600CCC21B /* UILabel+Extension.swift in Sources */,
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
 				B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */,
+				B950DDD0280B172C00CCC21B /* PaddingLabel.swift in Sources */,
 				B972474728087115001FEEA6 /* AdsView.swift in Sources */,
 				B948BC7C280717C80004EC6E /* Category.swift in Sources */,
 				B948BC86280726C60004EC6E /* NetworkError.swift in Sources */,
