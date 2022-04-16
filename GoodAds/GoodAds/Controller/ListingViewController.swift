@@ -11,8 +11,6 @@ class ListingViewController: UIViewController {
     
     
     //MARK: Properties
-    
-
     let listViewModel: ListViewModel
     let adsView = AdsView()
         lazy var adsTableView = adsView.adsTableView
@@ -77,6 +75,10 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return adsView.sizeWithTheDevice()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

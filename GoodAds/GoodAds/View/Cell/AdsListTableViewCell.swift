@@ -30,8 +30,9 @@ class AdsListTableViewCell: UITableViewCell {
     //MARK: - Subviews
     lazy var adImage: UIImageView = {
         let image = UIImageView()
+        image.layer.borderColor = UIColor.gray.cgColor
+        image.layer.borderWidth = 2
         image.contentMode = .scaleToFill
-        image.sizeToFit()
         image.layer.masksToBounds = true
         image.layer.cornerRadius = 20
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -41,8 +42,8 @@ class AdsListTableViewCell: UITableViewCell {
     lazy var adTitle: UILabel = {
         let text = UILabel()
         text.textColor = .black
-        text.font = UIFont(name: "futura", size: 20)
-        text.numberOfLines = 0
+        text.font = UIFont(name: "futura-Bold", size: 20)
+        text.numberOfLines = 2
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
@@ -50,23 +51,37 @@ class AdsListTableViewCell: UITableViewCell {
     lazy var adPrice: UILabel = {
         let text = UILabel()
         text.textColor = .black
-        text.font = UIFont(name: "futura", size: 15)
+        text.font = UIFont(name: "Futura-CondensedExtraBold", size: 20)
         text.numberOfLines = 0
+        text.adjustsFontSizeToFitWidth = true
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
     
     lazy var adCategory: UILabel = {
         let text = UILabel()
+        text.text = "Catégorie"
         text.textColor = .black
-        text.font = UIFont(name: "futura", size: 15)
+        text.font = UIFont(name: "Futura-MediumItalic", size: 15)
+        text.numberOfLines = 0
+        text.adjustsFontSizeToFitWidth = true
+        text.translatesAutoresizingMaskIntoConstraints = false
+        return text
+    }()
+    
+    lazy var adDate: UILabel = {
+        let text = UILabel()
+        text.text = "12-12-12 12:00"
+        text.textColor = .black
+        text.font = UIFont(name: "Futura-MediumItalic", size: 15)
         text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
     
     lazy var adUrgent: UILabel = {
-        let text = PaddingLabel(withInsets: 5, 5, 5, 5)
+        let text = UILabel()
+        text.setMargins(margin: 5)
         text.text = "Urgent"
         text.textColor = .orange
         text.backgroundColor = .white
@@ -74,21 +89,13 @@ class AdsListTableViewCell: UITableViewCell {
         text.layer.borderColor = UIColor.orange.cgColor
         text.layer.cornerRadius = 5
         text.font = UIFont(name: "futura", size: 20)
-        text.textAlignment = .left
+        text.textAlignment = .center
+        text.font.withSize(20)
         text.layer.masksToBounds = true
+        text.font = UIFont.preferredFont(forTextStyle: .body)
+        text.adjustsFontSizeToFitWidth = true
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
-    }()
-    
-    lazy var labelsHStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.distribution = .fillProportionally
-        let subviews = [adTitle, adCategory,adPrice]
-        for view in subviews {
-            addSubview(view)
-        }
-        return stack
     }()
 }
 extension AdsListTableViewCell {
@@ -96,9 +103,10 @@ extension AdsListTableViewCell {
     func configureCell(ad: ClassifiedAd, categories: [Category]) {
         adImage.downloaded(from: ad.imagesURL.thumb ?? "no image")
         adTitle.text = ad.title
-        adPrice.text = "\(adPrice)€"
+        adPrice.text = String(ad.price) + "€"
         isUrgent(ad: ad)
-//        adCategory.text = wichCategory(ad: ad, categories: categories)
+        adDate.text = Tool.shared.convertToDateFormate(dateString: ad.creationDate)
+        adCategory.text = wichCategory(ad: ad, categories: categories)
     }
     
     private func isUrgent(ad: ClassifiedAd) {
@@ -117,7 +125,11 @@ extension AdsListTableViewCell {
     private func cellConstraints() {
         addSubview(adImage)
         addSubview(adUrgent)
-        backgroundColor = .blue
+        addSubview(adTitle)
+        addSubview(adCategory)
+        addSubview(adPrice)
+        addSubview(adDate)
+        backgroundColor = .white
         layer.cornerRadius = 20
         NSLayoutConstraint.activate([
             adImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -126,7 +138,20 @@ extension AdsListTableViewCell {
             adImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35),
             adUrgent.leadingAnchor.constraint(equalTo: adImage.leadingAnchor, constant: 10),
             adUrgent.bottomAnchor.constraint(equalTo: adImage.bottomAnchor, constant: -10),
-            adUrgent.heightAnchor.constraint(equalTo: adImage.heightAnchor, multiplier: 0.10)
+            adUrgent.heightAnchor.constraint(equalTo: adImage.heightAnchor, multiplier: 0.10),
+            adUrgent.widthAnchor.constraint(equalTo: adImage.widthAnchor, multiplier: 0.4),
+            adTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            adTitle.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
+            adTitle.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            adCategory.topAnchor.constraint(equalTo: adTitle.bottomAnchor, constant: 10),
+            adCategory.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            adCategory.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
+            adPrice.topAnchor.constraint(equalTo: adCategory.bottomAnchor, constant: 10),
+            adPrice.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            adPrice.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
+            adDate.topAnchor.constraint(equalTo: adPrice.bottomAnchor, constant: 10),
+            adDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            adDate.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10)
         ])
     }
 }

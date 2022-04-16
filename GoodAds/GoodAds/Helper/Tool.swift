@@ -37,6 +37,18 @@ class Tool {
           return output
       }
     
+    func convertToDateFormate(dateString: String) -> String {
+//        let dateFormatter = DateFormatter()
+//        let date = dateFormatter.date(from: dateString) ?? Date()
+//        dateFormatter.dateFormat = "dd/MM/yyyy hh:mm"
+//        var dateFor: NSDateFormatter = NSDateFormatter()
+//            dateFor.dateFormat = "dd/MM/yyyy hh:mm"
+//
+//            var yourDate: NSDate? = dateFor.dateFromString(str)
+//
+//        let convertedDate: String = dateFormatter.string(from: date)
+        return ""
+    }
     
 }
 

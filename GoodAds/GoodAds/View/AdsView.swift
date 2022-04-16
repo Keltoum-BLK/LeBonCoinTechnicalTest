@@ -21,13 +21,25 @@ class AdsView: UIView {
         configureSubviews()
     }
     //MARK: UI Property
+    lazy var viewTitle: UILabel = {
+        let text = UILabel()
+        text.text = "Good Ads"
+        text.textColor = .orange
+        text.font = UIFont(name: "futura-Bold", size: 20)
+        text.numberOfLines = 2
+        text.translatesAutoresizingMaskIntoConstraints = false
+        return text
+    }()
+    
     lazy var adsTableView: UITableView = {
        let tabView = UITableView()
         tabView.translatesAutoresizingMaskIntoConstraints = false
-        tabView.backgroundColor = .gray
+        tabView.backgroundColor = .clear
+        tabView.separatorStyle = .none
         tabView.register(AdsListTableViewCell.self, forCellReuseIdentifier: AdsListTableViewCell.identifier)
         return tabView
     }()
+    
     lazy var categoryBTN: UIButton = {
         let btn = UIButton(type: .custom)
         btn.backgroundColor = UIColor.white
@@ -49,6 +61,8 @@ extension AdsView {
    private func addConstraints() {
        translatesAutoresizingMaskIntoConstraints = false
        NSLayoutConstraint.activate([
+        viewTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+        viewTitle.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
         adsTableView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
         adsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 150),
         adsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0),
@@ -61,6 +75,7 @@ extension AdsView {
     }
 
     private func configureSubviews() {
+        addSubview(viewTitle)
         addSubview(adsTableView)
         addSubview(categoryBTN)
         backgroundColor = .white
