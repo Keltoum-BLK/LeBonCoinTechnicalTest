@@ -188,8 +188,8 @@
 			children = (
 				B972474628087115001FEEA6 /* AdsView.swift */,
 				B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */,
-				B948BC442806D1BD0004EC6E /* LaunchScreen.storyboard */,
 				B972475A28088C62001FEEA6 /* Cell */,
+				B948BC442806D1BD0004EC6E /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

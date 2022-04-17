@@ -116,6 +116,11 @@ class AdDetailScrollView : UIView {
         stack.addArrangedSubview(adTitle)
         stack.addArrangedSubview(adPrice)
         stack.addArrangedSubview(adDate)
+        stack.addArrangedSubview(descTitle)
+        stack.addArrangedSubview(adDesc)
+        stack.addArrangedSubview(siretStack)
+        stack.alignment = .fill
+        stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -131,14 +136,12 @@ class AdDetailScrollView : UIView {
         return text
     }()
     
-    lazy var adDesc: UITextView = {
-        let text = UITextView()
+    lazy var adDesc: UILabel = {
+        let text = UILabel()
         text.text = "Desc"
-        text.textContainerInset = .init(top: 10, left: 10, bottom: 10, right: 10)
         text.textColor = .black
         text.layer.cornerRadius = 20
-        text.layer.borderColor = UIColor.orange.cgColor
-        text.layer.borderWidth = 2
+        text.numberOfLines = 0
         text.font = UIFont.systemFont(ofSize: 20)
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
@@ -159,11 +162,21 @@ class AdDetailScrollView : UIView {
         let text = UILabel()
         text.text = ""
         text.textColor = .black
-        text.font = UIFont.boldSystemFont(ofSize: 20)
+        text.font = UIFont.systemFont(ofSize: 15)
         text.numberOfLines = 0
         text.adjustsFontSizeToFitWidth = true
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
+    }()
+    
+    lazy var siretStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 10
+        stack.addArrangedSubview(siretLabel)
+        stack.addArrangedSubview(siretNumber)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
     
     
@@ -180,10 +193,19 @@ class AdDetailScrollView : UIView {
     }
     
     func checkImage(from classifiedAd: ClassifiedAd) {
-        if ((classifiedAd.imagesURL.thumb?.isEmpty) == nil) {
+        if classifiedAd.imagesURL.thumb?.isEmpty == nil {
             adImage.image = UIImage(named: "emptyImage.jpeg")
         } else {
             adImage.cacheImage(urlString: classifiedAd.imagesURL.thumb ?? "no image")
+        }
+    }
+    
+    func checkSiretNumber(from classifiedAd: ClassifiedAd) {
+        if classifiedAd.siret != nil {
+            siretStack.isHidden = false
+            siretNumber.text = classifiedAd.siret 
+        } else {
+            siretStack.isHidden = true
         }
     }
 }
@@ -194,10 +216,11 @@ extension AdDetailScrollView {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         NSLayoutConstraint.activate([
-            scrollView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            scrollView.centerXAnchor.constraint(equalTo: centerXAnchor), scrollView.centerXAnchor.constraint(equalTo: centerXAnchor),
             scrollView.widthAnchor.constraint(equalTo: widthAnchor),
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
             
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor),
@@ -211,40 +234,28 @@ extension AdDetailScrollView {
         contentView.addSubview(adUrgent)
         contentView.addSubview(closeControllerButton)
         contentView.addSubview(stack)
-        contentView.addSubview(descTitle)
-        contentView.addSubview(adDesc)
    
         NSLayoutConstraint.activate([
-            adImage.widthAnchor.constraint(equalTo: contentView.widthAnchor),
             adImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-            adImage.heightAnchor.constraint(equalTo:contentView.heightAnchor,multiplier: 0.35),
-            adImage.leadingAnchor.constraint(equalTo:contentView.leadingAnchor),
-            adImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            adImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            adImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            adImage.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7)
         ])
         NSLayoutConstraint.activate([
-            closeControllerButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            closeControllerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            closeControllerButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            closeControllerButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             adUrgent.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             adUrgent.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: 70),
-            adUrgent.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.05),
-            adUrgent.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20)
+            adUrgent.heightAnchor.constraint(equalToConstant: 50),
+            adUrgent.widthAnchor.constraint(equalToConstant: 100)
         ])
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: adImage.bottomAnchor, constant: 10),
-            stack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            stack.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.85)
+            stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
         
-        NSLayoutConstraint.activate([
-            descTitle.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 20),
-            descTitle.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            descTitle.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.85),
-            
-            adDesc.topAnchor.constraint(equalTo: descTitle.bottomAnchor, constant: 10),
-            adDesc.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            adDesc.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.85),
-            adDesc.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.20)
-        ])
     }
 }
 

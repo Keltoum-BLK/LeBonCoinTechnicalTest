@@ -39,7 +39,7 @@ class AdDetailsViewController: UIViewController {
         adDetailsView.adPrice.text = "\(classifiedAd.price)€"
         adDetailsView.adDate.text = Tool.shared.convertDate(from: classifiedAd.creationDate)
         adDetailsView.adDesc.text = classifiedAd.description
-        adDetailsView.siretNumber.text = classifiedAd.siret
+        adDetailsView.checkSiretNumber(from: classifiedAd)
     }
 }
 extension AdDetailsViewController: AdActionsView {

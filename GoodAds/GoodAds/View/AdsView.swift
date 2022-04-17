@@ -49,15 +49,16 @@ class AdsView: UIView {
         btn.layer.cornerRadius = 20
         btn.layer.borderColor = UIColor.orange.cgColor
         btn.layer.borderWidth = 2
-        btn.setTitle("Catégorie", for: .normal)
+        btn.setTitle("Catégories", for: .normal)
         btn.titleEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
         btn.titleLabel?.font = UIFont(name: "futura", size: 20) 
         btn.setTitleColor(.orange, for: .normal)
+        btn.addTarget(self, action: #selector(setupCategoriesButton), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
-    func setupCategoriesButton() {
+    @objc func setupCategoriesButton() {
         delegate?.setPopupButton()
     }
 
@@ -76,7 +77,7 @@ extension AdsView {
         adsTableView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
         categoryBTN.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
         categoryBTN.bottomAnchor.constraint(equalTo: adsTableView.topAnchor, constant: -10),
-        categoryBTN.widthAnchor.constraint(equalToConstant: 150)
+        categoryBTN.widthAnchor.constraint(equalToConstant: 200)
        ])
        
     }

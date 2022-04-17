@@ -8,7 +8,7 @@
 import UIKit
 
 class ListingViewController: UIViewController {
-
+    
     //MARK: Properties
     let listViewModel: ListViewModel
     let adsView = AdsView()
@@ -21,17 +21,24 @@ class ListingViewController: UIViewController {
             }
         }
     }
+    var categoryAds: [ClassifiedAd] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.adsTableView.reloadData()
+            }
+        }
+    }
     
     //MARK: Init
     init(viewModel: ListViewModel = ListViewModel()){
-            self.listViewModel = viewModel
-            super.init(nibName: nil, bundle: nil)
-        }
-
+        self.listViewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     //MARK: Cycle Life
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,13 +56,13 @@ class ListingViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         listViewModel.fecthClassifiedAds()
         listViewModel.fecthCategories()
     }
-
+    
 }
 extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -73,7 +80,8 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = adsView.adsTableView.dequeueReusableCell(withIdentifier: AdsListTableViewCell.identifier, for: indexPath) as! AdsListTableViewCell
-        cell.configureCell(from: listOfAds[indexPath.row], and: categoriesList)
+        cell.selectionStyle = .none
+        cell.configureCell(from: self.listOfAds[indexPath.row], and: self.categoriesList)
         return cell
     }
     
@@ -84,25 +92,29 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+@available(iOS 15.0, *)
 extension ListingViewController: ClassifiedAdsListAction {
     func setPopupButton() {
-        categoriesList.forEach { category in
-            UIAction(title: category.name) { (_) in
-                
-            }
+        categoryAds = listOfAds
+        var actions = [UIMenuElement]()
+        let firstAction = UIAction(title: "Catégories", state: .on ,handler: { (_) in
+            self.listOfAds = self.categoryAds})
+        actions.append(firstAction)
+        for i in categoriesList {
+            let uiAction = UIAction(title: categoriesList[i.id - 1].name,handler: { (_) in
+                self.listOfAds = self.filterAdsByCategory(from: self.categoryAds, and:self.categoriesList[i.id - 1])})
+            actions.append(uiAction)
         }
-        
-        
+        adsView.categoryBTN.menu = UIMenu(children: actions)
+        adsView.categoryBTN.showsMenuAsPrimaryAction = true
+        adsView.categoryBTN.changesSelectionAsPrimaryAction = true
     }
     
-    func filterAdsByCategory(from list: [ClassifiedAd], and classifiedAd: ClassifiedAd, and category: Category)-> [ClassifiedAd] {
-        var listByCategory = [ClassifiedAd]()
-        
-  
+    func filterAdsByCategory(from list: [ClassifiedAd], and category: Category)-> [ClassifiedAd] {
+        var listByCategory = list
+        listByCategory = list.filter({ $0.categoryID == category.id })
         return listByCategory
     }
-    
-    
 }
 
 

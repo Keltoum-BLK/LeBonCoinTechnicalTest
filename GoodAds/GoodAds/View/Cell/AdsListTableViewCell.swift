@@ -44,7 +44,7 @@ class AdsListTableViewCell: UITableViewCell {
         let text = UILabel()
         text.textColor = .black
         text.font = UIFont.boldSystemFont(ofSize: 20)
-        text.numberOfLines = 0
+        text.numberOfLines = 2
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
@@ -119,7 +119,7 @@ extension AdsListTableViewCell {
     }
     
     func checkImage(from classifiedAd: ClassifiedAd) {
-        if ((classifiedAd.imagesURL.thumb?.isEmpty) == nil) {
+        if  classifiedAd.imagesURL.thumb?.isEmpty == nil, classifiedAd.imagesURL.small?.isEmpty == nil {
             adImage.image = UIImage(named: "emptyImage.jpeg")
         } else {
             adImage.cacheImage(urlString: classifiedAd.imagesURL.thumb ?? "no image")
@@ -149,7 +149,7 @@ extension AdsListTableViewCell {
             adUrgent.widthAnchor.constraint(equalTo: adImage.widthAnchor, multiplier: 0.4),
             adTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             adTitle.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
-            adTitle.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            adTitle.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             adCategory.topAnchor.constraint(equalTo: adTitle.bottomAnchor, constant: 5),
             adCategory.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             adCategory.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
