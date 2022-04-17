@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9434FAC280C9D4100A23B18 /* ClassifiedAdsListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */; };
 		B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC392806D1BD0004EC6E /* AppDelegate.swift */; };
 		B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3B2806D1BD0004EC6E /* SceneDelegate.swift */; };
 		B948BC3E2806D1BD0004EC6E /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */; };
@@ -17,7 +18,6 @@
 		B948BC5D2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC5C2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift */; };
 		B948BC6A2806D1DD0004EC6E /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC692806D1DD0004EC6E /* Categories.json */; };
 		B948BC6C2806D2090004EC6E /* Listing.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6B2806D2090004EC6E /* Listing.json */; };
-		B948BC6E2806D2330004EC6E /* Swagger.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6D2806D2330004EC6E /* Swagger.json */; };
 		B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC78280717950004EC6E /* ClassifiedAd.swift */; };
 		B948BC7C280717C80004EC6E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7B280717C80004EC6E /* Category.swift */; };
 		B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7E2807230D0004EC6E /* ApiService.swift */; };
@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsListAction.swift; sourceTree = "<group>"; };
 		B948BC362806D1BD0004EC6E /* GoodAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948BC392806D1BD0004EC6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B948BC3B2806D1BD0004EC6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		B948BC5C2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAdsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B948BC692806D1DD0004EC6E /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		B948BC6B2806D2090004EC6E /* Listing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Listing.json; sourceTree = "<group>"; };
-		B948BC6D2806D2330004EC6E /* Swagger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Swagger.json; sourceTree = "<group>"; };
 		B948BC78280717950004EC6E /* ClassifiedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAd.swift; sourceTree = "<group>"; };
 		B948BC7B280717C80004EC6E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B948BC7E2807230D0004EC6E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -138,9 +138,9 @@
 				B948BC752806D6C00004EC6E /* Helper */,
 				B948BC702806D6780004EC6E /* Model */,
 				B948BC712806D6800004EC6E /* View */,
-				B972476028089089001FEEA6 /* ExtensionsView */,
 				B948BC84280724700004EC6E /* ViewModel */,
 				B948BC722806D6840004EC6E /* Controller */,
+				B972476028089089001FEEA6 /* Extensions */,
 				B948BC472806D1BD0004EC6E /* Info.plist */,
 			);
 			path = GoodAds;
@@ -152,7 +152,6 @@
 				B948BC502806D1BD0004EC6E /* GoodAdsTests.swift */,
 				B948BC692806D1DD0004EC6E /* Categories.json */,
 				B948BC6B2806D2090004EC6E /* Listing.json */,
-				B948BC6D2806D2330004EC6E /* Swagger.json */,
 			);
 			path = GoodAdsTests;
 			sourceTree = "<group>";
@@ -200,7 +199,6 @@
 			children = (
 				B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */,
 				B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */,
-				B972473E28085D73001FEEA6 /* Extensions */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,15 +244,9 @@
 			children = (
 				B97247432808675C001FEEA6 /* ListViewModel.swift */,
 				B972473C280842BC001FEEA6 /* AdActionsView.swift */,
+				B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B972473E28085D73001FEEA6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B972475A28088C62001FEEA6 /* Cell */ = {
@@ -265,13 +257,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		B972476028089089001FEEA6 /* ExtensionsView */ = {
+		B972476028089089001FEEA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */,
 				B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */,
 			);
-			path = ExtensionsView;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,7 +379,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B948BC6E2806D2330004EC6E /* Swagger.json in Resources */,
 				B948BC6A2806D1DD0004EC6E /* Categories.json in Resources */,
 				B948BC6C2806D2090004EC6E /* Listing.json in Resources */,
 			);
@@ -417,6 +408,7 @@
 				B948BC812807241C0004EC6E /* ListingService.swift in Sources */,
 				B9724753280888C7001FEEA6 /* AdDetailScrollView .swift in Sources */,
 				B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */,
+				B9434FAC280C9D4100A23B18 /* ClassifiedAdsListAction.swift in Sources */,
 				B950DDCE280B11F600CCC21B /* UILabel+Extension.swift in Sources */,
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
 				B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */,

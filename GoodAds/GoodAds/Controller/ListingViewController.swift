@@ -8,12 +8,11 @@
 import UIKit
 
 class ListingViewController: UIViewController {
-    
-    
+
     //MARK: Properties
     let listViewModel: ListViewModel
     let adsView = AdsView()
-        lazy var adsTableView = adsView.adsTableView
+    lazy var adsTableView = adsView.adsTableView
     var categoriesList: [Category] = []
     var listOfAds: [ClassifiedAd] = [] {
         didSet {
@@ -22,6 +21,7 @@ class ListingViewController: UIViewController {
             }
         }
     }
+    
     //MARK: Init
     init(viewModel: ListViewModel = ListViewModel()){
             self.listViewModel = viewModel
@@ -37,17 +37,17 @@ class ListingViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.title = "Good Ads"
         view = adsView
+        adsView.delegate = self
         adsView.adsTableView.dataSource = self
         adsView.adsTableView.delegate = self
-        
-        listViewModel.updateListOfCategories = { [weak self] categories in
-            self?.categoriesList = categories
+        DispatchQueue.main.async {
+            self.listViewModel.updateListOfCategories = { [weak self] categories in
+                self?.categoriesList = categories
+            }
+            self.listViewModel.updateListOfAds = { [weak self] ads in
+                self?.listOfAds = Tool.shared.sortedAds(from: ads)
+            }
         }
-
-        listViewModel.updateListOfAds = { [weak self] ads in
-            self?.listOfAds = Tool.shared.sortedAds(listOfAds: ads)
-        }
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,10 +56,6 @@ class ListingViewController: UIViewController {
         listViewModel.fecthCategories()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-    }
 }
 extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -77,17 +73,36 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = adsView.adsTableView.dequeueReusableCell(withIdentifier: AdsListTableViewCell.identifier, for: indexPath) as! AdsListTableViewCell
-        cell.configureCell(ad: listOfAds[indexPath.row], categories: categoriesList)
+        cell.configureCell(from: listOfAds[indexPath.row], and: categoriesList)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let adDetailsView = AdDetailsViewController(ad: listOfAds[indexPath.row])
+        let adDetailsView = AdDetailsViewController(from: listOfAds[indexPath.row], and: categoriesList)
         adDetailsView.modalPresentationStyle = .pageSheet
-        let vc = UINavigationController(rootViewController: adDetailsView)
-        present(vc, animated: true, completion: nil)
-       
+        present(adDetailsView, animated: true, completion: nil)
     }
+}
+
+extension ListingViewController: ClassifiedAdsListAction {
+    func setPopupButton() {
+        categoriesList.forEach { category in
+            UIAction(title: category.name) { (_) in
+                
+            }
+        }
+        
+        
+    }
+    
+    func filterAdsByCategory(from list: [ClassifiedAd], and classifiedAd: ClassifiedAd, and category: Category)-> [ClassifiedAd] {
+        var listByCategory = [ClassifiedAd]()
+        
+  
+        return listByCategory
+    }
+    
+    
 }
 
 

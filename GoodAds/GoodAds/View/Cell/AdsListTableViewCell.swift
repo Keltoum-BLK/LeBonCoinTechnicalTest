@@ -30,6 +30,7 @@ class AdsListTableViewCell: UITableViewCell {
     //MARK: - Subviews
     lazy var adImage: UIImageView = {
         let image = UIImageView()
+        image.image = UIImage(named: "emptyImage.jpeg")
         image.layer.borderColor = UIColor.gray.cgColor
         image.layer.borderWidth = 2
         image.contentMode = .scaleToFill
@@ -42,8 +43,8 @@ class AdsListTableViewCell: UITableViewCell {
     lazy var adTitle: UILabel = {
         let text = UILabel()
         text.textColor = .black
-        text.font = UIFont(name: "futura-Bold", size: 20)
-        text.numberOfLines = 2
+        text.font = UIFont.boldSystemFont(ofSize: 20)
+        text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
@@ -51,7 +52,7 @@ class AdsListTableViewCell: UITableViewCell {
     lazy var adPrice: UILabel = {
         let text = UILabel()
         text.textColor = .black
-        text.font = UIFont(name: "Futura-CondensedExtraBold", size: 20)
+        text.font = UIFont.boldSystemFont(ofSize: 20)
         text.numberOfLines = 0
         text.adjustsFontSizeToFitWidth = true
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -62,19 +63,9 @@ class AdsListTableViewCell: UITableViewCell {
         let text = UILabel()
         text.text = "Catégorie"
         text.textColor = .black
-        text.font = UIFont(name: "Futura-MediumItalic", size: 15)
+        text.font = UIFont.systemFont(ofSize: 15)
         text.numberOfLines = 0
         text.adjustsFontSizeToFitWidth = true
-        text.translatesAutoresizingMaskIntoConstraints = false
-        return text
-    }()
-    
-    lazy var adDate: UILabel = {
-        let text = UILabel()
-        text.text = "12-12-12 12:00"
-        text.textColor = .black
-        text.font = UIFont(name: "Futura-MediumItalic", size: 15)
-        text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
@@ -88,25 +79,35 @@ class AdsListTableViewCell: UITableViewCell {
         text.layer.borderWidth = 1
         text.layer.borderColor = UIColor.orange.cgColor
         text.layer.cornerRadius = 5
-        text.font = UIFont(name: "futura", size: 20)
+        text.font = UIFont.boldSystemFont(ofSize: 15)
         text.textAlignment = .center
-        text.font.withSize(20)
         text.layer.masksToBounds = true
-        text.font = UIFont.preferredFont(forTextStyle: .body)
         text.adjustsFontSizeToFitWidth = true
+        text.translatesAutoresizingMaskIntoConstraints = false
+        return text
+    }()
+    
+    lazy var adDate: UILabel = {
+        let text = UILabel()
+        text.text = "12-12-12 12:00"
+        text.textColor = .black
+        text.font = UIFont.italicSystemFont(ofSize: 15)
+        text.numberOfLines = 0
+        text.clipsToBounds = true
+        text.layer.masksToBounds = true
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
 }
 extension AdsListTableViewCell {
     
-    func configureCell(ad: ClassifiedAd, categories: [Category]) {
-        adImage.downloaded(from: ad.imagesURL.small ?? "no image")
-        adTitle.text = ad.title
-        adPrice.text = String(ad.price) + "€"
-        isUrgent(ad: ad)
-        adCategory.text = wichCategory(ad: ad, categories: categories)
-        adDate.text = Tool.shared.convertToDateFormat(dateString: ad.creationDate)
+    func configureCell(from classifiedAd : ClassifiedAd, and categories: [Category]) {
+        checkImage(from: classifiedAd)
+        adTitle.text = classifiedAd.title
+        adPrice.text = String(classifiedAd.price) + "€"
+        isUrgent(ad: classifiedAd)
+        adCategory.text = Tool.shared.fetchCategoryName(from: classifiedAd,and: categories)
+        adDate.text = Tool.shared.convertDate(from: classifiedAd.creationDate)
     }
     
     private func isUrgent(ad: ClassifiedAd) {
@@ -117,10 +118,16 @@ extension AdsListTableViewCell {
         }
     }
     
-    private func wichCategory(ad: ClassifiedAd, categories: [Category]) -> String {
-        let category = categories[ad.categoryID - 1].name
-            return category
+    func checkImage(from classifiedAd: ClassifiedAd) {
+        if ((classifiedAd.imagesURL.thumb?.isEmpty) == nil) {
+            adImage.image = UIImage(named: "emptyImage.jpeg")
+        } else {
+            adImage.cacheImage(urlString: classifiedAd.imagesURL.thumb ?? "no image")
+        }
     }
+}
+
+extension AdsListTableViewCell {
     
     private func cellConstraints() {
         addSubview(adImage)
@@ -128,6 +135,7 @@ extension AdsListTableViewCell {
         addSubview(adTitle)
         addSubview(adCategory)
         addSubview(adPrice)
+        addSubview(adDate)
         backgroundColor = .white
         layer.cornerRadius = 20
         NSLayoutConstraint.activate([
@@ -142,12 +150,15 @@ extension AdsListTableViewCell {
             adTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             adTitle.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
             adTitle.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            adCategory.topAnchor.constraint(equalTo: adTitle.bottomAnchor, constant: 10),
+            adCategory.topAnchor.constraint(equalTo: adTitle.bottomAnchor, constant: 5),
             adCategory.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             adCategory.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
-            adPrice.topAnchor.constraint(equalTo: adCategory.bottomAnchor, constant: 10),
+            adPrice.topAnchor.constraint(equalTo: adCategory.bottomAnchor, constant: 5),
             adPrice.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            adPrice.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10)
+            adPrice.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10),
+            adDate.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            adDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            adDate.leadingAnchor.constraint(equalTo: adImage.trailingAnchor, constant: 10)
         ])
     }
 }

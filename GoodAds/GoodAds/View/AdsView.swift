@@ -20,6 +20,9 @@ class AdsView: UIView {
         super.init(coder: aDecoder)
         configureSubviews()
     }
+    
+    //MARK: Delegate
+    weak var delegate: ClassifiedAdsListAction?
     //MARK: UI Property
     lazy var viewTitle: UILabel = {
         let text = UILabel()
@@ -53,6 +56,10 @@ class AdsView: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
+    
+    func setupCategoriesButton() {
+        delegate?.setPopupButton()
+    }
 
 }
 extension AdsView {

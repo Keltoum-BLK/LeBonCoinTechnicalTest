@@ -8,10 +8,11 @@
 import Foundation
 
 class ListViewModel: NSObject {
-    
+    //MARK: Properties
     var updateListOfAds: ((_ newAdsToDisplay: [ClassifiedAd]) -> Void)?
     var updateListOfCategories: ((_ newCategoriesToDisplay: [Category]) -> Void)?
     
+    //MARK: Methods
     func fecthCategories() {
         CategoriesService.shared.getCategoriesData { [weak self] result in
                 guard let self = self else { return }

@@ -9,13 +9,15 @@ import UIKit
 
 class AdDetailsViewController: UIViewController {
     
-    private let ad: ClassifiedAd
-    var adDetails: ClassifiedAd?
     lazy var adDetailsView = AdDetailScrollView()
+    private let classifiedAd: ClassifiedAd
+    private let categories: [Category]
  
     
-    init(ad: ClassifiedAd) {
-        self.ad = ad
+    
+    init(from classifiedAd: ClassifiedAd, and categories: [Category]) {
+        self.classifiedAd = classifiedAd
+        self.categories = categories
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,8 +29,18 @@ class AdDetailsViewController: UIViewController {
         super.viewDidLoad()
         view = adDetailsView
         adDetailsView.delegate = self
-        adDetailsView.adImage.downloaded(from: ad.imagesURL.thumb ?? "no image")
-    }  
+        setupDetailsInformations()
+    }
+    
+    func setupDetailsInformations() {
+        adDetailsView.checkImage(from: classifiedAd)
+        adDetailsView.isUrgent(from: classifiedAd)
+        adDetailsView.adTitle.text = classifiedAd.title
+        adDetailsView.adPrice.text = "\(classifiedAd.price)€"
+        adDetailsView.adDate.text = Tool.shared.convertDate(from: classifiedAd.creationDate)
+        adDetailsView.adDesc.text = classifiedAd.description
+        adDetailsView.siretNumber.text = classifiedAd.siret
+    }
 }
 extension AdDetailsViewController: AdActionsView {
     func dismissAdViewController() {
