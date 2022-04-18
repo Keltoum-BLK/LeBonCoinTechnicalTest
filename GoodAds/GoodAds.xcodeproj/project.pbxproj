@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94241DE280D6184002E6E16 /* FakeaResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241DD280D6184002E6E16 /* FakeaResponseData.swift */; };
+		B94241E0280D61D1002E6E16 /* URLTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241DF280D61D1002E6E16 /* URLTestProtocol.swift */; };
+		B94241E3280D6345002E6E16 /* MockListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241E2280D6345002E6E16 /* MockListingService.swift */; };
+		B94241E5280D635C002E6E16 /* MockCategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241E4280D635C002E6E16 /* MockCategoriesService.swift */; };
+		B9434FAC280C9D4100A23B18 /* ClassifiedAdsListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */; };
 		B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC392806D1BD0004EC6E /* AppDelegate.swift */; };
 		B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3B2806D1BD0004EC6E /* SceneDelegate.swift */; };
 		B948BC3E2806D1BD0004EC6E /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */; };
@@ -15,30 +20,23 @@
 		B948BC512806D1BD0004EC6E /* GoodAdsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC502806D1BD0004EC6E /* GoodAdsTests.swift */; };
 		B948BC5B2806D1BE0004EC6E /* GoodAdsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC5A2806D1BE0004EC6E /* GoodAdsUITests.swift */; };
 		B948BC5D2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC5C2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift */; };
-		B948BC6A2806D1DD0004EC6E /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC692806D1DD0004EC6E /* Categories.json */; };
-		B948BC6C2806D2090004EC6E /* Listing.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6B2806D2090004EC6E /* Listing.json */; };
-		B948BC6E2806D2330004EC6E /* Swagger.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6D2806D2330004EC6E /* Swagger.json */; };
+		B948BC6A2806D1DD0004EC6E /* FakeCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC692806D1DD0004EC6E /* FakeCategories.json */; };
+		B948BC6C2806D2090004EC6E /* FakeListing.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6B2806D2090004EC6E /* FakeListing.json */; };
 		B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC78280717950004EC6E /* ClassifiedAd.swift */; };
-		B948BC7C280717C80004EC6E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7B280717C80004EC6E /* Category.swift */; };
+		B948BC7C280717C80004EC6E /* CategoryAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7B280717C80004EC6E /* CategoryAd.swift */; };
 		B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7E2807230D0004EC6E /* ApiService.swift */; };
 		B948BC812807241C0004EC6E /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC802807241C0004EC6E /* ListingService.swift */; };
 		B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC822807245E0004EC6E /* CategoriesService.swift */; };
 		B948BC86280726C60004EC6E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC85280726C60004EC6E /* NetworkError.swift */; };
 		B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */; };
-		B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473A280842A8001FEEA6 /* ListingActionsView.swift */; };
+		B950DDCE280B11F600CCC21B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */; };
 		B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972473C280842BC001FEEA6 /* AdActionsView.swift */; };
-		B972474228085E55001FEEA6 /* Extension-AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */; };
 		B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97247432808675C001FEEA6 /* ListViewModel.swift */; };
 		B972474728087115001FEEA6 /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474628087115001FEEA6 /* AdsView.swift */; };
-		B972474B28088035001FEEA6 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474A28088035001FEEA6 /* ImageView.swift */; };
-		B972474D28088058001FEEA6 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474C28088058001FEEA6 /* TableView.swift */; };
-		B972474F2808807D001FEEA6 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972474E2808807D001FEEA6 /* Label.swift */; };
-		B972475128088122001FEEA6 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475028088122001FEEA6 /* StackView.swift */; };
 		B9724753280888C7001FEEA6 /* AdDetailScrollView .swift in Sources */ = {isa = PBXBuildFile; fileRef = B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */; };
-		B972475528088959001FEEA6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475428088959001FEEA6 /* BackButton.swift */; };
 		B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475B28088C92001FEEA6 /* AdsListTableViewCell.swift */; };
 		B972475E28088E43001FEEA6 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972475D28088E43001FEEA6 /* Tool.swift */; };
-		B9724762280890B7001FEEA6 /* Extension-UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9724761280890B7001FEEA6 /* Extension-UIImageView.swift */; };
+		B9724762280890B7001FEEA6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B94241DD280D6184002E6E16 /* FakeaResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeaResponseData.swift; sourceTree = "<group>"; };
+		B94241DF280D61D1002E6E16 /* URLTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTestProtocol.swift; sourceTree = "<group>"; };
+		B94241E2280D6345002E6E16 /* MockListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListingService.swift; sourceTree = "<group>"; };
+		B94241E4280D635C002E6E16 /* MockCategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoriesService.swift; sourceTree = "<group>"; };
+		B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsListAction.swift; sourceTree = "<group>"; };
 		B948BC362806D1BD0004EC6E /* GoodAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948BC392806D1BD0004EC6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B948BC3B2806D1BD0004EC6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,30 +74,23 @@
 		B948BC562806D1BE0004EC6E /* GoodAdsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodAdsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948BC5A2806D1BE0004EC6E /* GoodAdsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAdsUITests.swift; sourceTree = "<group>"; };
 		B948BC5C2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAdsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B948BC692806D1DD0004EC6E /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
-		B948BC6B2806D2090004EC6E /* Listing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Listing.json; sourceTree = "<group>"; };
-		B948BC6D2806D2330004EC6E /* Swagger.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Swagger.json; sourceTree = "<group>"; };
+		B948BC692806D1DD0004EC6E /* FakeCategories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeCategories.json; sourceTree = "<group>"; };
+		B948BC6B2806D2090004EC6E /* FakeListing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeListing.json; sourceTree = "<group>"; };
 		B948BC78280717950004EC6E /* ClassifiedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAd.swift; sourceTree = "<group>"; };
-		B948BC7B280717C80004EC6E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B948BC7B280717C80004EC6E /* CategoryAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAd.swift; sourceTree = "<group>"; };
 		B948BC7E2807230D0004EC6E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		B948BC802807241C0004EC6E /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
 		B948BC822807245E0004EC6E /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		B948BC85280726C60004EC6E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
-		B972473A280842A8001FEEA6 /* ListingActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingActionsView.swift; sourceTree = "<group>"; };
+		B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		B972473C280842BC001FEEA6 /* AdActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdActionsView.swift; sourceTree = "<group>"; };
-		B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-AdDetailsViewController.swift"; sourceTree = "<group>"; };
 		B97247432808675C001FEEA6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		B972474628087115001FEEA6 /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
-		B972474A28088035001FEEA6 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		B972474C28088058001FEEA6 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		B972474E2808807D001FEEA6 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
-		B972475028088122001FEEA6 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdDetailScrollView .swift"; sourceTree = "<group>"; };
-		B972475428088959001FEEA6 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		B972475B28088C92001FEEA6 /* AdsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListTableViewCell.swift; sourceTree = "<group>"; };
 		B972475D28088E43001FEEA6 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
-		B9724761280890B7001FEEA6 /* Extension-UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIImageView.swift"; sourceTree = "<group>"; };
+		B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +118,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B94241E1280D62C8002E6E16 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				B94241DD280D6184002E6E16 /* FakeaResponseData.swift */,
+				B94241DF280D61D1002E6E16 /* URLTestProtocol.swift */,
+				B948BC6B2806D2090004EC6E /* FakeListing.json */,
+				B948BC692806D1DD0004EC6E /* FakeCategories.json */,
+				B94241E2280D6345002E6E16 /* MockListingService.swift */,
+				B94241E4280D635C002E6E16 /* MockCategoriesService.swift */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
 		B948BC2D2806D1BD0004EC6E = {
 			isa = PBXGroup;
 			children = (
@@ -148,12 +157,11 @@
 				B948BC6F2806D6020004EC6E /* App */,
 				B948BC732806D6A00004EC6E /* Asset */,
 				B948BC752806D6C00004EC6E /* Helper */,
-				B948BC742806D6B90004EC6E /* Extensions */,
 				B948BC702806D6780004EC6E /* Model */,
 				B948BC712806D6800004EC6E /* View */,
-				B972476028089089001FEEA6 /* ExtensionsView */,
 				B948BC84280724700004EC6E /* ViewModel */,
 				B948BC722806D6840004EC6E /* Controller */,
+				B972476028089089001FEEA6 /* Extensions */,
 				B948BC472806D1BD0004EC6E /* Info.plist */,
 			);
 			path = GoodAds;
@@ -163,9 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B948BC502806D1BD0004EC6E /* GoodAdsTests.swift */,
-				B948BC692806D1DD0004EC6E /* Categories.json */,
-				B948BC6B2806D2090004EC6E /* Listing.json */,
-				B948BC6D2806D2330004EC6E /* Swagger.json */,
+				B94241E1280D62C8002E6E16 /* NetworkTests */,
 			);
 			path = GoodAdsTests;
 			sourceTree = "<group>";
@@ -200,10 +206,9 @@
 		B948BC712806D6800004EC6E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B972475A28088C62001FEEA6 /* Cell */,
-				B9724745280870ED001FEEA6 /* ReusableElements */,
 				B972474628087115001FEEA6 /* AdsView.swift */,
 				B9724752280888C7001FEEA6 /* AdDetailScrollView .swift */,
+				B972475A28088C62001FEEA6 /* Cell */,
 				B948BC442806D1BD0004EC6E /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -214,7 +219,6 @@
 			children = (
 				B948BC3D2806D1BD0004EC6E /* ListingViewController.swift */,
 				B948BC8728072D5E0004EC6E /* AdDetailsViewController.swift */,
-				B972473E28085D73001FEEA6 /* Extensions */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,16 +231,10 @@
 			path = Asset;
 			sourceTree = "<group>";
 		};
-		B948BC742806D6B90004EC6E /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		B948BC752806D6C00004EC6E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B972475D28088E43001FEEA6 /* Tool.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -245,8 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				B948BC78280717950004EC6E /* ClassifiedAd.swift */,
-				B948BC7B280717C80004EC6E /* Category.swift */,
-				B972475D28088E43001FEEA6 /* Tool.swift */,
+				B948BC7B280717C80004EC6E /* CategoryAd.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -266,30 +263,10 @@
 			isa = PBXGroup;
 			children = (
 				B97247432808675C001FEEA6 /* ListViewModel.swift */,
-				B972473A280842A8001FEEA6 /* ListingActionsView.swift */,
 				B972473C280842BC001FEEA6 /* AdActionsView.swift */,
+				B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B972473E28085D73001FEEA6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B972474128085E55001FEEA6 /* Extension-AdDetailsViewController.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B9724745280870ED001FEEA6 /* ReusableElements */ = {
-			isa = PBXGroup;
-			children = (
-				B972474A28088035001FEEA6 /* ImageView.swift */,
-				B972474E2808807D001FEEA6 /* Label.swift */,
-				B972474C28088058001FEEA6 /* TableView.swift */,
-				B972475028088122001FEEA6 /* StackView.swift */,
-				B972475428088959001FEEA6 /* BackButton.swift */,
-			);
-			path = ReusableElements;
 			sourceTree = "<group>";
 		};
 		B972475A28088C62001FEEA6 /* Cell */ = {
@@ -300,12 +277,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		B972476028089089001FEEA6 /* ExtensionsView */ = {
+		B972476028089089001FEEA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B9724761280890B7001FEEA6 /* Extension-UIImageView.swift */,
+				B9724761280890B7001FEEA6 /* UIImageView+Extension.swift */,
+				B950DDCD280B11F600CCC21B /* UILabel+Extension.swift */,
 			);
-			path = ExtensionsView;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,9 +399,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B948BC6E2806D2330004EC6E /* Swagger.json in Resources */,
-				B948BC6A2806D1DD0004EC6E /* Categories.json in Resources */,
-				B948BC6C2806D2090004EC6E /* Listing.json in Resources */,
+				B948BC6A2806D1DD0004EC6E /* FakeCategories.json in Resources */,
+				B948BC6C2806D2090004EC6E /* FakeListing.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,23 +422,18 @@
 				B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */,
 				B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */,
 				B972475E28088E43001FEEA6 /* Tool.swift in Sources */,
-				B9724762280890B7001FEEA6 /* Extension-UIImageView.swift in Sources */,
-				B972474F2808807D001FEEA6 /* Label.swift in Sources */,
+				B9724762280890B7001FEEA6 /* UIImageView+Extension.swift in Sources */,
 				B972473D280842BC001FEEA6 /* AdActionsView.swift in Sources */,
 				B97247442808675C001FEEA6 /* ListViewModel.swift in Sources */,
-				B972475128088122001FEEA6 /* StackView.swift in Sources */,
-				B972474D28088058001FEEA6 /* TableView.swift in Sources */,
 				B948BC812807241C0004EC6E /* ListingService.swift in Sources */,
-				B972474B28088035001FEEA6 /* ImageView.swift in Sources */,
 				B9724753280888C7001FEEA6 /* AdDetailScrollView .swift in Sources */,
-				B972474228085E55001FEEA6 /* Extension-AdDetailsViewController.swift in Sources */,
 				B948BC8828072D5E0004EC6E /* AdDetailsViewController.swift in Sources */,
-				B972473B280842A8001FEEA6 /* ListingActionsView.swift in Sources */,
+				B9434FAC280C9D4100A23B18 /* ClassifiedAdsListAction.swift in Sources */,
+				B950DDCE280B11F600CCC21B /* UILabel+Extension.swift in Sources */,
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
 				B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */,
 				B972474728087115001FEEA6 /* AdsView.swift in Sources */,
-				B972475528088959001FEEA6 /* BackButton.swift in Sources */,
-				B948BC7C280717C80004EC6E /* Category.swift in Sources */,
+				B948BC7C280717C80004EC6E /* CategoryAd.swift in Sources */,
 				B948BC86280726C60004EC6E /* NetworkError.swift in Sources */,
 				B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */,
 				B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */,
@@ -472,6 +444,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94241E5280D635C002E6E16 /* MockCategoriesService.swift in Sources */,
+				B94241E3280D6345002E6E16 /* MockListingService.swift in Sources */,
+				B94241DE280D6184002E6E16 /* FakeaResponseData.swift in Sources */,
+				B94241E0280D61D1002E6E16 /* URLTestProtocol.swift in Sources */,
 				B948BC512806D1BD0004EC6E /* GoodAdsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

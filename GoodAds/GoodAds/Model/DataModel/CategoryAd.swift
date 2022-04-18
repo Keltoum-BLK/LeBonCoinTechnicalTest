@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Category
-struct Category: Codable {
+struct CategoryAd: Codable {
         let id: Int
         let name: String
     }

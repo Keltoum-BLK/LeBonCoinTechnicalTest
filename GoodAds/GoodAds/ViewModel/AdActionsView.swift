@@ -7,5 +7,5 @@
 
 import Foundation
 protocol AdActionsView: AnyObject {
-    func dismissView()
+    func dismissAdViewController()
 }

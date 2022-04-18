@@ -9,12 +9,12 @@ import Foundation
 
 // MARK: - ClassifiedAd
 struct ClassifiedAd: Codable {
-    let id, categoryID: Int
-    let title, description: String
-    let price: Int
+    let id, categoryID: Int?
+    let title, description: String?
+    let price: Int?
     let imagesURL: ImagesURL
-    let creationDate: String
-    let isUrgent: Bool
+    let creationDate: String?
+    let isUrgent: Bool?
     let siret: String?
 
     enum CodingKeys: String, CodingKey {
