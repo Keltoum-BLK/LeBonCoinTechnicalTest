@@ -103,24 +103,5 @@ extension AdsView {
         }
         return 200
     }
-    
-    @available(iOS 15.0, *)
-    func setPopupButton(from listOfAds1: [ClassifiedAd], and listOfAds2: [ClassifiedAd], listOfCategories: [CategoryAd]) {
-        var listA = listOfAds1
-        var listB = listOfAds2
-        listB = listA
-        var actions = [UIMenuElement]()
-        let firstAction = UIAction(title: "Catégories", state: .on ,handler: { (_) in
-            listA = listB})
-        actions.append(firstAction)
-        for i in listOfCategories {
-            let uiAction = UIAction(title: listOfCategories[i.id - 1].name,handler: { (_) in
-                listA = Tool.shared.filterAdsByCategory(from: listB, and: listOfCategories[i.id - 1])})
-            actions.append(uiAction)
-        }
-        categoryBTN.menu = UIMenu(children: actions)
-        categoryBTN.showsMenuAsPrimaryAction = true
-        categoryBTN.changesSelectionAsPrimaryAction = true
-    }
 }
 

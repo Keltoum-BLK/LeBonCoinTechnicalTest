@@ -97,7 +97,19 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
 @available(iOS 15.0, *)
 extension ListingViewController: ClassifiedAdsListAction {
     func setPopupButton() {
-        adsView.setPopupButton(from: listOfAds, and: categoryAds, listOfCategories: categoriesList)
+      categoryAds = listOfAds
+        var actions = [UIMenuElement]()
+        let firstAction = UIAction(title: "Catégories", state: .on ,handler: { (_) in
+            self.listOfAds = self.categoryAds})
+        actions.append(firstAction)
+        for i in categoriesList {
+            let uiAction = UIAction(title: categoriesList[i.id - 1].name,handler: { (_) in
+                self.listOfAds = Tool.shared.filterAdsByCategory(from: self.categoryAds, and: self.categoriesList[i.id - 1])})
+            actions.append(uiAction)
+        }
+        adsView.categoryBTN.menu = UIMenu(children: actions)
+        adsView.categoryBTN.showsMenuAsPrimaryAction = true
+        adsView.categoryBTN.changesSelectionAsPrimaryAction = true
     }
 }
 
