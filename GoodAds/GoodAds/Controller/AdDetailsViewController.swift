@@ -8,11 +8,10 @@
 import UIKit
 
 class AdDetailsViewController: UIViewController {
-    //MARK: Properties 
+    //MARK: Properties
     lazy var adDetailsView = AdDetailScrollView()
     private let classifiedAd: ClassifiedAd
     private let categories: [CategoryAd]
- 
     
     //MARK: Init Dependency
     init(from classifiedAd: ClassifiedAd, and categories: [CategoryAd]) {

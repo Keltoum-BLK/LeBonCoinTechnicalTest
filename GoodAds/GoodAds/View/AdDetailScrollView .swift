@@ -220,7 +220,7 @@ extension AdDetailScrollView {
             scrollView.widthAnchor.constraint(equalTo: widthAnchor),
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
+            
             
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor),
@@ -234,7 +234,7 @@ extension AdDetailScrollView {
         contentView.addSubview(adUrgent)
         contentView.addSubview(closeControllerButton)
         contentView.addSubview(stack)
-   
+        
         NSLayoutConstraint.activate([
             adImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             adImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

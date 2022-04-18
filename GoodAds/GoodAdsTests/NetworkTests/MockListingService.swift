@@ -63,7 +63,7 @@ class MockListingService: XCTestCase {
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
             }
-       
+            
             XCTAssertNotNil(error)
             XCTAssert(error.description == "No response from server")
             
