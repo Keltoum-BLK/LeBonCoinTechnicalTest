@@ -15,17 +15,17 @@ class ListViewModel: NSObject {
     //MARK: Methods to Api Call 
     func fecthCategories() {
         CategoriesService.shared.getCategoriesData { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let categories):
-                    DispatchQueue.main.async {
-                       self.updateListOfCategories?(categories)
-                    }
-                case .failure(let error):
-                    print(error.description)
+            guard let self = self else { return }
+            switch result {
+            case .success(let categories):
+                DispatchQueue.main.async {
+                    self.updateListOfCategories?(categories)
                 }
+            case .failure(let error):
+                print(error.description)
             }
         }
+    }
     
     func fecthClassifiedAds() {
         ListingService.shared.getListingData { [weak self] result in

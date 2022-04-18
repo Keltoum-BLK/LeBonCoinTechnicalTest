@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AdsView: UIView {
-    //MARK: Init 
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
@@ -35,7 +35,7 @@ class AdsView: UIView {
     }()
     
     lazy var adsTableView: UITableView = {
-       let tabView = UITableView()
+        let tabView = UITableView()
         tabView.translatesAutoresizingMaskIntoConstraints = false
         tabView.backgroundColor = .clear
         tabView.separatorStyle = .none
@@ -62,27 +62,27 @@ class AdsView: UIView {
     @objc func setupCategoriesButton() {
         delegate?.setPopupButton()
     }
-
+    
 }
 extension AdsView {
     
     //MARK: Methods
-   private func addConstraints() {
-       translatesAutoresizingMaskIntoConstraints = false
-       NSLayoutConstraint.activate([
-        viewTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-        viewTitle.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-        adsTableView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-        adsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 150),
-        adsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0),
-        adsTableView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-        categoryBTN.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-        categoryBTN.bottomAnchor.constraint(equalTo: adsTableView.topAnchor, constant: -10),
-        categoryBTN.widthAnchor.constraint(equalToConstant: 200)
-       ])
-       
+    private func addConstraints() {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            viewTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            viewTitle.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            adsTableView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            adsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 150),
+            adsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            adsTableView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            categoryBTN.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            categoryBTN.bottomAnchor.constraint(equalTo: adsTableView.topAnchor, constant: -10),
+            categoryBTN.widthAnchor.constraint(equalToConstant: 200)
+        ])
+        
     }
-
+    
     private func configureSubviews() {
         addSubview(viewTitle)
         addSubview(adsTableView)
@@ -103,6 +103,7 @@ extension AdsView {
         }
         return 200
     }
+    
     @available(iOS 15.0, *)
     func setPopupButton(from listOfAds1: [ClassifiedAd], and listOfAds2: [ClassifiedAd], listOfCategories: [CategoryAd]) {
         var listA = listOfAds1

@@ -15,14 +15,14 @@ final class URLTestProtocol: URLProtocol {
         
         return true
     }
-
+    
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         
         return request
     }
-
+    
     static var loadingHandler: ((URLRequest) -> (HTTPURLResponse, Data?, Error?))?
-
+    
     override func startLoading() {
         
         guard let handler = URLTestProtocol.loadingHandler else {
@@ -44,6 +44,6 @@ final class URLTestProtocol: URLProtocol {
             client?.urlProtocol(self, didFailWithError: protocolError)
         }
     }
-
+    
     override func stopLoading() {}
 }
