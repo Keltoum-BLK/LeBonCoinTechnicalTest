@@ -28,6 +28,6 @@ class FakeResponseData {
         let data = try! Data(contentsOf: url!)
         return data
     }
-    static let categoriesIcorrectData = "Error" .data(using: .utf8)!
+    static let categoriesIncorrectData = "Error" .data(using: .utf8)!
 }
 

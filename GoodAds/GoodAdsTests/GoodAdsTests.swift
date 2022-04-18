@@ -21,7 +21,7 @@ class GoodAdsTests: XCTestCase {
         super.setUp()
         tool = Tool()
         classifiedAd1 = ClassifiedAd(id: 1, categoryID: 2, title: "Pamplemousse", description: "Fruit excellent pour la santé", price: 1, imagesURL: ImagesURL(small: "", thumb: ""), creationDate: "24 decembre 2012", isUrgent: true, siret: "")
-        classifiedAd2 = ClassifiedAd(id: 1, categoryID: 1, title: "Radio Réveil", description: "Radio Réveil en bon état", price: 5, imagesURL: ImagesURL(small: "", thumb: ""), creationDate: "2 janvier 2020", isUrgent: false, siret: "")
+        classifiedAd2 = ClassifiedAd(id: 1, categoryID: 1, title: "Radio réveil", description: "Radio Réveil en bon état", price: 5, imagesURL: ImagesURL(small: "", thumb: ""), creationDate: "2 janvier 2020", isUrgent: false, siret: "")
         cat1 = CategoryAd(id: 2, name: "Alimentaire")
         cat2 = CategoryAd(id: 1, name: "Accessoires")
     }
@@ -58,4 +58,27 @@ class GoodAdsTests: XCTestCase {
         XCTAssertTrue(result[0].isUrgent == classifiedAd1.isUrgent)
     }
     
+    func testConvertDateFormat_WhenAddADateStringValue_ThenReturnANewDateFormat() {
+        //Given
+        let creationDate = "2019-11-05T15:56:59+0000"
+        //When
+        let result = tool.convertDate(from: creationDate)
+        print(result)
+        //Then
+        XCTAssertTrue(result == "05 novembre 2019 16:56")
+    }
+    
+    func testFetchCategoryName_WhenAddClassifiedAd_ThenReturnACategoryName() {
+        //When
+        let result = tool.fetchCategoryName(from: classifiedAd1, and: [cat1,cat2])
+        //Then
+        XCTAssertTrue(result == cat1.name)
+    }
+    
+    func testFilterListOfAds_WhenAddClassifiedAdAndCategory_ThenReturnAListofAdsByCategory() {
+        //When
+        let result = tool.filterAdsByCategory(from: [classifiedAd1, classifiedAd2], and: cat2)
+        //Then
+        XCTAssertTrue((result[0].title != nil), "Radio réveil")
+    }
 }
