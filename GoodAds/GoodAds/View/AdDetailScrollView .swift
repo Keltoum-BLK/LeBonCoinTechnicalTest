@@ -185,7 +185,7 @@ class AdDetailScrollView : UIView {
     }
     
     func isUrgent(from classifiedAd: ClassifiedAd) {
-        if classifiedAd.isUrgent {
+        if classifiedAd.isUrgent ?? true {
             adUrgent.isHidden = false
         } else {
             adUrgent.isHidden = true

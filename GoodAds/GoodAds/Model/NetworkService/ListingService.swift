@@ -33,9 +33,9 @@ class ListingService {
         return request
     }
 }
-
+//MARK: Extension to separe setup part and api call method 
 extension ListingService: ApiListingService {
-    
+    //Method to fetch all classified ads in array
     func getListingData(completion: @escaping (Result<[ClassifiedAd], NetworkError>) -> Void) {
         let request = createRequest()
         session.dataTask(with: request) { data, response, error in

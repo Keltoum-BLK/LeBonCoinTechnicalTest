@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//MARK: Enum to manage api call error 
 enum NetworkError: Error {
     case dataError
     case responseError

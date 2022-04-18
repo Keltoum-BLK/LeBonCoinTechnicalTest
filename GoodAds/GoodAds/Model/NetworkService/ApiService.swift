@@ -7,9 +7,8 @@
 
 import Foundation
 protocol ApiCategoriesService {
-    func getCategoriesData(completion: @escaping (Result<[Category], NetworkError>) -> Void)
+    func getCategoriesData(completion: @escaping (Result<[CategoryAd], NetworkError>) -> Void)
 }
-
 protocol ApiListingService {
     func getListingData(completion: @escaping (Result<[ClassifiedAd], NetworkError>) -> Void)
 }

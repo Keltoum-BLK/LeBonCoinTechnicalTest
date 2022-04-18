@@ -13,7 +13,8 @@ class ListingViewController: UIViewController {
     let listViewModel: ListViewModel
     let adsView = AdsView()
     lazy var adsTableView = adsView.adsTableView
-    var categoriesList: [Category] = []
+    var categoriesList: [CategoryAd] = []
+    //All data in this array
     var listOfAds: [ClassifiedAd] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -21,6 +22,7 @@ class ListingViewController: UIViewController {
             }
         }
     }
+    //List help to filter data by category
     var categoryAds: [ClassifiedAd] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -91,7 +93,7 @@ extension ListingViewController: UITableViewDelegate, UITableViewDataSource {
         present(adDetailsView, animated: true, completion: nil)
     }
 }
-
+//MARK: Method to create UIMenu with UIButton
 @available(iOS 15.0, *)
 extension ListingViewController: ClassifiedAdsListAction {
     func setPopupButton() {
@@ -102,18 +104,12 @@ extension ListingViewController: ClassifiedAdsListAction {
         actions.append(firstAction)
         for i in categoriesList {
             let uiAction = UIAction(title: categoriesList[i.id - 1].name,handler: { (_) in
-                self.listOfAds = self.filterAdsByCategory(from: self.categoryAds, and:self.categoriesList[i.id - 1])})
+                self.listOfAds = Tool.shared.filterAdsByCategory(from: self.categoryAds, and:self.categoriesList[i.id - 1])})
             actions.append(uiAction)
         }
         adsView.categoryBTN.menu = UIMenu(children: actions)
         adsView.categoryBTN.showsMenuAsPrimaryAction = true
         adsView.categoryBTN.changesSelectionAsPrimaryAction = true
-    }
-    
-    func filterAdsByCategory(from list: [ClassifiedAd], and category: Category)-> [ClassifiedAd] {
-        var listByCategory = list
-        listByCategory = list.filter({ $0.categoryID == category.id })
-        return listByCategory
     }
 }
 

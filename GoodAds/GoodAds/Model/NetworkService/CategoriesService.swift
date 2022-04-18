@@ -20,17 +20,25 @@ class CategoriesService: ApiCategoriesService {
     init(session: URLSession) {
         self.session = session
     }
-
-   func getCategoriesData(completion: @escaping (Result<[Category], NetworkError>) -> Void) {
+    //create URL request with UrlComponent 
+    private func createRequest() -> URLRequest {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "raw.githubusercontent.com"
         urlComponents.path = "/leboncoin/paperclip/master/categories.json"
 
-        guard let urlListing = urlComponents.url?.absoluteString else { return }
-        guard let url = URL(string: urlListing) else { return }
-        
-        session.dataTask(with: url) { data, response, error in
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "GET"
+        request.allowsExpensiveNetworkAccess = true
+        return request
+    }
+}
+//MARK: Extension to separe setup part and api call method 
+extension CategoriesService {
+    //Method to fetch all classified ads in array 
+   func getCategoriesData(completion: @escaping (Result<[CategoryAd], NetworkError>) -> Void) {
+       let request = createRequest()
+        session.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 completion(.failure(.dataError))
                 return
@@ -40,7 +48,7 @@ class CategoriesService: ApiCategoriesService {
                 return
             }
             do {
-                let adList = try JSONDecoder().decode([Category].self, from: data)
+                let adList = try JSONDecoder().decode([CategoryAd].self, from: data)
                 completion(.success(adList))
             } catch {
                 completion(.failure(.decodingData))

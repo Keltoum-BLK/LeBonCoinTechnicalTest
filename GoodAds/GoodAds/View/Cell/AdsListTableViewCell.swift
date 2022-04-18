@@ -101,17 +101,17 @@ class AdsListTableViewCell: UITableViewCell {
 }
 extension AdsListTableViewCell {
     
-    func configureCell(from classifiedAd : ClassifiedAd, and categories: [Category]) {
+    func configureCell(from classifiedAd : ClassifiedAd, and categories: [CategoryAd]) {
         checkImage(from: classifiedAd)
         adTitle.text = classifiedAd.title
-        adPrice.text = String(classifiedAd.price) + "€"
+        adPrice.text = String(classifiedAd.price ?? 1) + "€"
         isUrgent(ad: classifiedAd)
         adCategory.text = Tool.shared.fetchCategoryName(from: classifiedAd,and: categories)
-        adDate.text = Tool.shared.convertDate(from: classifiedAd.creationDate)
+        adDate.text = Tool.shared.convertDate(from: classifiedAd.creationDate ?? "no date")
     }
     
     private func isUrgent(ad: ClassifiedAd) {
-        if ad.isUrgent {
+        if ad.isUrgent ?? true {
             adUrgent.isHidden = false
         } else {
             adUrgent.isHidden = true
@@ -126,7 +126,7 @@ extension AdsListTableViewCell {
         }
     }
 }
-
+//MARK: Cell Constraints and AddSubviews 
 extension AdsListTableViewCell {
     
     private func cellConstraints() {

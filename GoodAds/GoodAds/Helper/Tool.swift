@@ -13,22 +13,24 @@ class Tool {
     static let shared = Tool()
     //MARK: SORTED METHODS
     //Sorted array first with the date and after with is_Urgent Bool
-    func sortedAds(from listOfAds: [ClassifiedAd]) -> [ClassifiedAd] {
+    func sortedAds(from listOfAds: [ClassifiedAd?]) -> [ClassifiedAd] {
         let list = listOfAds
-        let  sortedArray = list.sorted {$0.creationDate.compare($1.creationDate, options: .numeric) == .orderedDescending}
+        let  sortedArray = list.sorted {$0?.creationDate?.compare($1?.creationDate ?? "no date", options: .numeric) == .orderedDescending}
         let sortedUrgent = sortedUrgentAds(from: sortedArray)
         return sortedUrgent
     }
-    
-    func sortedUrgentAds(from classfiedAdList: [ClassifiedAd]) -> [ClassifiedAd] {
+    //MARK: Methods
+    //sort array of classifiedAds by urgent value
+    func sortedUrgentAds(from classfiedAdList: [ClassifiedAd?]) -> [ClassifiedAd] {
         var noUrgent: [ClassifiedAd] = []
         var isUrgent: [ClassifiedAd] = []
         
         for ad in classfiedAdList {
-            if ad.isUrgent {
-                isUrgent.append(ad)
+            guard let classifiedAd = ad else { return []}
+            if classifiedAd.isUrgent ?? true {
+                isUrgent.append(classifiedAd)
             } else {
-                noUrgent.append(ad)
+                noUrgent.append(classifiedAd)
             }
         }
         var output:[ClassifiedAd] = []
@@ -36,7 +38,7 @@ class Tool {
         output.append(contentsOf: noUrgent)
         return output
     }
-    
+    //convert ISO8601 string to another date format string
     func convertDate(from dateStr: String) -> String {
         let inputDate = dateStr
         let dateFormatter = DateFormatter()
@@ -45,14 +47,20 @@ class Tool {
         dateFormatter.dateFormat = "dd MMMM yyyy HH:mm"
         return dateFormatter.string(from: date)
     }
-    
-    func fetchCategoryName(from classifiedAd: ClassifiedAd, and categoriesList: [Category]) -> String  {
+    //fetch category name for UIMenu button 
+    func fetchCategoryName(from classifiedAd: ClassifiedAd, and categoriesList: [CategoryAd]) -> String  {
         if let index = categoriesList.firstIndex(where: {
             $0.id == classifiedAd.categoryID
         }) {
             return categoriesList[index].name
         }
         return ""
+    }
+    //Filter classified ads array by category value
+    func filterAdsByCategory(from list: [ClassifiedAd], and category: CategoryAd)-> [ClassifiedAd] {
+        var listByCategory = list
+        listByCategory = list.filter({ $0.categoryID == category.id })
+        return listByCategory
     }
 }
 

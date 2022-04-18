@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AdsView: UIView {
-    
+    //MARK: Init 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
@@ -26,7 +26,7 @@ class AdsView: UIView {
     //MARK: UI Property
     lazy var viewTitle: UILabel = {
         let text = UILabel()
-        text.text = "Good Ads"
+        text.text = "Leboncoin"
         text.textColor = .orange
         text.font = UIFont(name: "futura-Bold", size: 20)
         text.numberOfLines = 2
@@ -51,8 +51,9 @@ class AdsView: UIView {
         btn.layer.borderWidth = 2
         btn.setTitle("Catégories", for: .normal)
         btn.titleEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
-        btn.titleLabel?.font = UIFont(name: "futura", size: 20) 
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         btn.setTitleColor(.orange, for: .normal)
+        btn.setTitleColor(.gray, for: .selected)
         btn.addTarget(self, action: #selector(setupCategoriesButton), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

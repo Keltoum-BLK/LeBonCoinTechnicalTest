@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94241DE280D6184002E6E16 /* FakeaResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241DD280D6184002E6E16 /* FakeaResponseData.swift */; };
+		B94241E0280D61D1002E6E16 /* URLTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241DF280D61D1002E6E16 /* URLTestProtocol.swift */; };
+		B94241E3280D6345002E6E16 /* MockListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241E2280D6345002E6E16 /* MockListingService.swift */; };
+		B94241E5280D635C002E6E16 /* MockCategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94241E4280D635C002E6E16 /* MockCategoriesService.swift */; };
 		B9434FAC280C9D4100A23B18 /* ClassifiedAdsListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */; };
 		B948BC3A2806D1BD0004EC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC392806D1BD0004EC6E /* AppDelegate.swift */; };
 		B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC3B2806D1BD0004EC6E /* SceneDelegate.swift */; };
@@ -16,10 +20,10 @@
 		B948BC512806D1BD0004EC6E /* GoodAdsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC502806D1BD0004EC6E /* GoodAdsTests.swift */; };
 		B948BC5B2806D1BE0004EC6E /* GoodAdsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC5A2806D1BE0004EC6E /* GoodAdsUITests.swift */; };
 		B948BC5D2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC5C2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift */; };
-		B948BC6A2806D1DD0004EC6E /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC692806D1DD0004EC6E /* Categories.json */; };
-		B948BC6C2806D2090004EC6E /* Listing.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6B2806D2090004EC6E /* Listing.json */; };
+		B948BC6A2806D1DD0004EC6E /* FakeCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC692806D1DD0004EC6E /* FakeCategories.json */; };
+		B948BC6C2806D2090004EC6E /* FakeListing.json in Resources */ = {isa = PBXBuildFile; fileRef = B948BC6B2806D2090004EC6E /* FakeListing.json */; };
 		B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC78280717950004EC6E /* ClassifiedAd.swift */; };
-		B948BC7C280717C80004EC6E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7B280717C80004EC6E /* Category.swift */; };
+		B948BC7C280717C80004EC6E /* CategoryAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7B280717C80004EC6E /* CategoryAd.swift */; };
 		B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC7E2807230D0004EC6E /* ApiService.swift */; };
 		B948BC812807241C0004EC6E /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC802807241C0004EC6E /* ListingService.swift */; };
 		B948BC832807245E0004EC6E /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948BC822807245E0004EC6E /* CategoriesService.swift */; };
@@ -53,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B94241DD280D6184002E6E16 /* FakeaResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeaResponseData.swift; sourceTree = "<group>"; };
+		B94241DF280D61D1002E6E16 /* URLTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTestProtocol.swift; sourceTree = "<group>"; };
+		B94241E2280D6345002E6E16 /* MockListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListingService.swift; sourceTree = "<group>"; };
+		B94241E4280D635C002E6E16 /* MockCategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoriesService.swift; sourceTree = "<group>"; };
 		B9434FAB280C9D4100A23B18 /* ClassifiedAdsListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdsListAction.swift; sourceTree = "<group>"; };
 		B948BC362806D1BD0004EC6E /* GoodAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948BC392806D1BD0004EC6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,10 +74,10 @@
 		B948BC562806D1BE0004EC6E /* GoodAdsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodAdsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948BC5A2806D1BE0004EC6E /* GoodAdsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAdsUITests.swift; sourceTree = "<group>"; };
 		B948BC5C2806D1BE0004EC6E /* GoodAdsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAdsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B948BC692806D1DD0004EC6E /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
-		B948BC6B2806D2090004EC6E /* Listing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Listing.json; sourceTree = "<group>"; };
+		B948BC692806D1DD0004EC6E /* FakeCategories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeCategories.json; sourceTree = "<group>"; };
+		B948BC6B2806D2090004EC6E /* FakeListing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeListing.json; sourceTree = "<group>"; };
 		B948BC78280717950004EC6E /* ClassifiedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAd.swift; sourceTree = "<group>"; };
-		B948BC7B280717C80004EC6E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B948BC7B280717C80004EC6E /* CategoryAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAd.swift; sourceTree = "<group>"; };
 		B948BC7E2807230D0004EC6E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		B948BC802807241C0004EC6E /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
 		B948BC822807245E0004EC6E /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
@@ -110,6 +118,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B94241E1280D62C8002E6E16 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				B94241DD280D6184002E6E16 /* FakeaResponseData.swift */,
+				B94241DF280D61D1002E6E16 /* URLTestProtocol.swift */,
+				B948BC6B2806D2090004EC6E /* FakeListing.json */,
+				B948BC692806D1DD0004EC6E /* FakeCategories.json */,
+				B94241E2280D6345002E6E16 /* MockListingService.swift */,
+				B94241E4280D635C002E6E16 /* MockCategoriesService.swift */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
 		B948BC2D2806D1BD0004EC6E = {
 			isa = PBXGroup;
 			children = (
@@ -150,8 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B948BC502806D1BD0004EC6E /* GoodAdsTests.swift */,
-				B948BC692806D1DD0004EC6E /* Categories.json */,
-				B948BC6B2806D2090004EC6E /* Listing.json */,
+				B94241E1280D62C8002E6E16 /* NetworkTests */,
 			);
 			path = GoodAdsTests;
 			sourceTree = "<group>";
@@ -223,7 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				B948BC78280717950004EC6E /* ClassifiedAd.swift */,
-				B948BC7B280717C80004EC6E /* Category.swift */,
+				B948BC7B280717C80004EC6E /* CategoryAd.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -379,8 +399,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B948BC6A2806D1DD0004EC6E /* Categories.json in Resources */,
-				B948BC6C2806D2090004EC6E /* Listing.json in Resources */,
+				B948BC6A2806D1DD0004EC6E /* FakeCategories.json in Resources */,
+				B948BC6C2806D2090004EC6E /* FakeListing.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +433,7 @@
 				B948BC7F2807230D0004EC6E /* ApiService.swift in Sources */,
 				B972475C28088C92001FEEA6 /* AdsListTableViewCell.swift in Sources */,
 				B972474728087115001FEEA6 /* AdsView.swift in Sources */,
-				B948BC7C280717C80004EC6E /* Category.swift in Sources */,
+				B948BC7C280717C80004EC6E /* CategoryAd.swift in Sources */,
 				B948BC86280726C60004EC6E /* NetworkError.swift in Sources */,
 				B948BC79280717950004EC6E /* ClassifiedAd.swift in Sources */,
 				B948BC3C2806D1BD0004EC6E /* SceneDelegate.swift in Sources */,
@@ -424,6 +444,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94241E5280D635C002E6E16 /* MockCategoriesService.swift in Sources */,
+				B94241E3280D6345002E6E16 /* MockListingService.swift in Sources */,
+				B94241DE280D6184002E6E16 /* FakeaResponseData.swift in Sources */,
+				B94241E0280D61D1002E6E16 /* URLTestProtocol.swift in Sources */,
 				B948BC512806D1BD0004EC6E /* GoodAdsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
